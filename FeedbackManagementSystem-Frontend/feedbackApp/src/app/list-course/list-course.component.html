@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <tr>
+    <th>Course Id </th>
+    <th>Course Name </th>
+    <th>No of Days</th>
+    
+  </tr>
+  <tr *ngFor="let c of courses; let i =index">
+  <td>{{c.courseId}}</td>
+  <td>{{c.courseName}}</td>
+  <td>{{c.noOfDays}}</td>
+  <td><button class="btn btn-warning" (click)="remove(i)">Delete</button></td>
+</tr>
+</table>

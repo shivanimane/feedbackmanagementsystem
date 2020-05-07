@@ -1,0 +1,15 @@
+[
+    {
+        "username":"admin",
+        "password":"admin"
+    },
+    {
+        "username":"coordinator",
+        "password":"coordinator"
+    },
+    {
+        "username":"participant",
+        "password":"participant"
+    }
+
+]
