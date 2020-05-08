@@ -124,3 +124,23 @@ Database Name : feedback
 
 4- Delete Training Program By Id
     DeleteMapping ; http://localhost:5056/admin/deleteTrainingProgram/{id}
+
+
+
+**************Course : 5057***********
+1- Add TCourse
+    PostMapping : http://localhost:5057/admin/addCourse
+    Json Sample : 
+    {
+    "courseName": "Microservices",
+    "noOfDays": 15
+}
+
+2- Get All Courses
+    GetMapping : http://localhost:5057/admin/getAllCourseList
+
+3- Get Course By Id 
+    GetMapping: http://localhost:5057/admin/getCourseById/{id}
+
+4- Delete Course By Id
+    DeleteMapping ; http://localhost:5057/admin/deleteCourse/{id}

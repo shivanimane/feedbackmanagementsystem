@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.cg.controller;
 
 import java.util.List;
