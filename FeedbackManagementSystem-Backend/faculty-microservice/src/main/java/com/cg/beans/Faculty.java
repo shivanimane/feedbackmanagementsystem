@@ -5,6 +5,7 @@
  */
 package com.cg.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -32,9 +34,11 @@ public class Faculty {
 	@Column(name="FACULTY_NAME")
 	private String facultyName;
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
-	@JoinColumn(name ="SKILLSET")
-	private List<Skills> listOfSkills;
+	@ManyToMany
+	@JoinTable(name = "skills_list", 
+	joinColumns =  @JoinColumn(name = "FACULTY_ID"),
+	inverseJoinColumns = @JoinColumn(name = "SKILL_ID"))
+	private List<Skills> listOfSkills = new ArrayList<Skills>();
 	
 	/**
 	 * Default Constructor
@@ -74,15 +78,15 @@ public class Faculty {
 	/**
 	 * @return the listOfSkillSet
 	 */
-	public List<Skills> getListOfSkillSet() {
+	public List<Skills> getListOfSkills() {
 		return listOfSkills;
 	}
 
 	/**
 	 * @param listOfSkillSet the listOfSkillSet to set
 	 */
-	public void setListOfSkillSet(List<Skills> listOfSkillSet) {
-		this.listOfSkills = listOfSkillSet;
+	public void setListOfSkillSet(List<Skills> listOfSkills) {
+		this.listOfSkills = listOfSkills;
 	}
 
 	
