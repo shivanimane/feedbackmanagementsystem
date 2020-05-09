@@ -19,6 +19,7 @@ export class AddCourseComponent implements OnInit {
 
   saveCourse(){
     this.service.addCourse(this.course);
+    console.log(this.course.courseName);
     this.course = new CourseModel();
     this.route.navigate(['list-course']);
   }

@@ -4,19 +4,31 @@
       <tr>
         <td><label> Course ID </label></td>
         <td>
-          <input name="courseId" class="form-control" [(ngModel)]=course.courseId placeholder="Enter Course ID" required pattern="[0-9]{1,2}" #courseid=ngModel>
+          <input name="courseId" class="form-control" 
+          [(ngModel)]=course.courseId 
+          placeholder="Enter Course ID" 
+          required pattern="[0-9]{1,2}" 
+          #courseId=ngModel>
         </td>
       </tr>
       <tr>
         <td><label> Course Name </label></td>
         <td>
-          <input name="courseName" class="form-control" [(ngModel)]=course.courseName placeholder="Enter Course Name" required pattern="[A-Z][a-z]{1,}" #courseName=ngModel>
+          <input name="courseName" class="form-control" 
+          [(ngModel)]=course.courseName 
+          placeholder="Enter Course Name" 
+          required pattern="[A-Z][a-z]{1,}" 
+          #courseName=ngModel>
         </td>
       </tr>
       <tr>
         <td><label> No of Days </label></td>
         <td>
-          <input name="noOfDays" class="form-control" [(ngModel)]=course.noOfDays placeholder="Enter No of Days" required pattern= "[0-9]{1,3}" #noOfDays = ngModel>
+          <input name="noOfDays" class="form-control" 
+          [(ngModel)]=course.noOfDays 
+          placeholder="Enter No of Days" 
+          required pattern= "[0-9]{1,3}" 
+          #noOfDays = ngModel>
         </td>
       </tr>
     </table>

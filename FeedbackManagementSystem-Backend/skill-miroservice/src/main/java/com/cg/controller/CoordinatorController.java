@@ -35,7 +35,7 @@ public class CoordinatorController {
 	
 	//http://localhost:5055/coordinator/allskills/{skillName}
 	@GetMapping("/allskills/{skillName}")
-	public Skills getAllSkillByName(@PathVariable(value = "skillName") String skillName) {
+	public Skills getSkillByName(@PathVariable(value = "skillName") String skillName) {
 		return this.coodinatorService.getSkillSetByName(skillName);
 	}
 	

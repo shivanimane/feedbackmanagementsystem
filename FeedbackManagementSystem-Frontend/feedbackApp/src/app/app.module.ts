@@ -12,6 +12,8 @@ import { ParticipantComponent } from './participant/participant.component';
 import { HomeComponent } from './home/home.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { ListCourseComponent } from './list-course/list-course.component';
+import { AddFacultyComponent } from './add-faculty/add-faculty.component';
+import { ListFacultyComponent } from './list-faculty/list-faculty.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -19,6 +21,8 @@ const routes : Routes = [
   {path:'home', component:HomeComponent},
   {path:'add-course', component:AddCourseComponent},
   {path:'list-course', component:ListCourseComponent},
+  {path:'add-faculty', component:AddFacultyComponent},
+  {path:'list-faculty', component:ListFacultyComponent},
   {path:'coordinator', component:CoordinatorComponent},
   {path:'participant', component:ParticipantComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
@@ -34,7 +38,9 @@ const routes : Routes = [
     ParticipantComponent,
     HomeComponent,
     AddCourseComponent,
-    ListCourseComponent
+    ListCourseComponent,
+    AddFacultyComponent,
+    ListFacultyComponent
   ],
   imports: [
     BrowserModule,

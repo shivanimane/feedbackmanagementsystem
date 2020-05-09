@@ -21,4 +21,12 @@ export class AdminComponent implements OnInit {
     this.route.navigate(['list-course']);
   }
 
+  clickOnAddFaculty(){
+    this.route.navigate(['add-faculty']);
+  }
+
+  clickOnListFaculty(){
+    this.route.navigate(['list-faculty']);
+  }
+//ng n s service/skill
 }
