@@ -4,6 +4,8 @@ import { FacultyService } from '../service/faculty.service';
 import { Router } from '@angular/router';
 import { SkillsModel } from '../models/skills.model';
 import { SkillService } from '../service/skill.service';
+import { NgForm } from '@angular/forms';
+import { s } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-add-faculty',
@@ -29,13 +31,23 @@ export class AddFacultyComponent implements OnInit {
     this.skillsservice.getAllSkills().subscribe(data => this.skills=data);
   }
 
-  add(index : number){
-    this.selectedSkills.push(this.skills[index]);
-  }
+  // add(index : number){
+  //   this.selectedSkills.push(this.skills[index]);
+  // }
 
   saveFaculty(){
-    this.service.addFaculty(this.faculty);
-    this.faculty = new FacultyModel();
-    this.route.navigate(['list-faculty']);
+   // this.selectedSkills.push(this.skills[form.controls['selectedSkill'].value]);
+  //  if((this.skills.filter(s=>s.checked))){
+  //       this.selectedSkills.push(this.skills);
+  //  }
+
+  this.selectedSkills = this.skills.filter( (s) => s.checked );
+    console.log(this.selectedSkills);
+    //this.selectedSkills.push(selected);
+    this.faculty.skills=this.selectedSkills;
+    console.log(this.faculty);
+    this.service.addFaculty(this.faculty).subscribe(response=>{
+      this.route.navigate(['list-faculty'])
+    });
   }
 }
