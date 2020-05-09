@@ -1,4 +1,4 @@
 export class SkillsModel{
-    skillId : String;
+    skillId : number;
     skillName : String;
 }
