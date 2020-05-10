@@ -44,6 +44,7 @@ export class AddFacultyComponent implements OnInit {
   this.selectedSkills = this.skills.filter( (s) => s.checked );
     console.log(this.selectedSkills);
     //this.selectedSkills.push(selected);
+    //pushed again
     this.faculty.skills=this.selectedSkills;
     console.log(this.faculty);
     this.service.addFaculty(this.faculty).subscribe(response=>{
