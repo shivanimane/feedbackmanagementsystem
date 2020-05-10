@@ -11,16 +11,20 @@ export class ListCourseComponent implements OnInit {
 
   courses: CourseModel[] =[];
   constructor(private service: CourseService) {
-    this.courses = this.service.fetchAllCourses();
    }
 
   ngOnInit() {
-    this.courses = this.service.fetchAllCourses();
+    this.service.fetchAllCourses().subscribe(data => {
+      this.courses =data;
+      console.log(this.courses);
+    });
   }
   remove(index: number){
     var ans =confirm("Are you sure you want to delete?");
     if(ans){
-      this.service.deleteCourse(index);
+      this.service.deleteCourse(index).subscribe(response=>{
+         console.log(this.courses);
+      });
     }
   }
 
