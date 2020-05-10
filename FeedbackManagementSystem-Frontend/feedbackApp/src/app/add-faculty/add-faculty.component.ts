@@ -38,4 +38,4 @@ export class AddFacultyComponent implements OnInit {
     this.faculty = new FacultyModel();
     this.route.navigate(['list-faculty']);
   }
-}
+}    
