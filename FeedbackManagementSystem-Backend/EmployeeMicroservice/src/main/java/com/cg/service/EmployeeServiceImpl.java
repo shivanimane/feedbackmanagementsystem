@@ -31,9 +31,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public String checkRole(int empId) {
+	public Employee checkRole(int empId) {
 		Employee employee = eDao.findById(empId).get();
-		return employee.getRole();
+		return employee;
 	}
 
 }

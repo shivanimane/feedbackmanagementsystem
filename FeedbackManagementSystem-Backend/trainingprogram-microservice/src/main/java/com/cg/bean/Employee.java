@@ -1,30 +1,23 @@
 
 package com.cg.bean;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /**
  * @author Uma Shankar
  *
  * 06-May-2020 9:07:28 pm
  */
-@Entity
-@Table(name = "EMPLOYEE_MASTER")
+//POJO
 public class Employee {
-	@Id
-	@Column(name = "EMPLOYEE_ID")
+	
 	private Integer employeeId;
 
-	@Column(name = "EMPLOYEE_NAME")
+
 	private String employeeName;
 
-	@Column(name = "PASSWORD")
+
 	private String password;
 
-	@Column(name = "ROLE")
+
 	private String role;
 
 	public Integer getEmployeeId() {

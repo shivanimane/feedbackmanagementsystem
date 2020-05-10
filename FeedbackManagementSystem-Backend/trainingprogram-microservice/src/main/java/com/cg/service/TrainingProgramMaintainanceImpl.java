@@ -4,13 +4,14 @@
 package com.cg.service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.bean.Employee;
+import com.cg.bean.ParticipantEnrolled;
 import com.cg.bean.TrainingProgram;
+import com.cg.dao.ParticipantEnrolledRepository;
 import com.cg.dao.TrainingProgramRepository;
 
 /**
@@ -24,6 +25,9 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	
 	@Autowired
 	TrainingProgramRepository trainingProgramDao ;
+	
+	@Autowired
+	ParticipantEnrolledRepository participantEnrolledDao ;
 
 	@Override
 	public List<TrainingProgram> getAllTrainingProgram() {
@@ -49,13 +53,22 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	}
 
 	@Override
-	public boolean isTrainingProgram(Integer trainingCode) {
+	public TrainingProgram isTrainingProgram(Integer trainingCode) {
 		List<TrainingProgram> trainingProgramList = this.trainingProgramDao.findAll();
 		for(int i=0;i<=trainingProgramList.size();i++) {
 			if(trainingProgramList.get(i).getTrainingCode()==trainingCode)
-				return true;
+				return trainingProgramList.get(i);
 		}
-		return false;
+		return null;
+	}
+
+	@Override
+	public ParticipantEnrolled enrollParticipant(Employee employee, TrainingProgram tp) {
+		ParticipantEnrolled partEnrolled = new ParticipantEnrolled();
+		partEnrolled.setPartEnrollNo(employee.getEmployeeId());
+		partEnrolled.setParticipantName(employee.getEmployeeName());
+		partEnrolled.setTrainingprogram(tp);
+		return participantEnrolledDao.save(partEnrolled);
 	}
 	
 	
