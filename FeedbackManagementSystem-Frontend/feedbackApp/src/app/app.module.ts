@@ -14,6 +14,8 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { ListCourseComponent } from './list-course/list-course.component';
 import { AddFacultyComponent } from './add-faculty/add-faculty.component';
 import { ListFacultyComponent } from './list-faculty/list-faculty.component';
+import { BarRatingModule } from "ngx-bar-rating";
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -25,8 +27,9 @@ const routes : Routes = [
   {path:'list-faculty', component:ListFacultyComponent},
   {path:'coordinator', component:CoordinatorComponent},
   {path:'participant', component:ParticipantComponent},
-  {path:'', redirectTo:'login', pathMatch:"full"},
-  {path:'*', redirectTo:'login', pathMatch:"full"}
+  {path:'add-feedback', component:AddFeedbackComponent},
+  {path:'', redirectTo:'home', pathMatch:"full"},
+  {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
 
 @NgModule({
@@ -40,13 +43,15 @@ const routes : Routes = [
     AddCourseComponent,
     ListCourseComponent,
     AddFacultyComponent,
-    ListFacultyComponent
+    ListFacultyComponent,
+    AddFeedbackComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

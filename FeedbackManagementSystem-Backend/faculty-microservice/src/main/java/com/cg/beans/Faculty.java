@@ -5,18 +5,13 @@
  */
 package com.cg.beans;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -34,12 +29,14 @@ public class Faculty {
 	@Column(name="FACULTY_NAME")
 	private String facultyName;
 	
-	@ManyToMany
-	@JoinTable(name = "skills_list", 
-	joinColumns =  @JoinColumn(name = "FACULTY_ID"),
-	inverseJoinColumns = @JoinColumn(name = "SKILL_ID"))
-	private List<Skills> listOfSkills = new ArrayList<Skills>();
-	
+//	@ManyToMany
+//	@JoinTable(name = "skills_list", 
+//	joinColumns =  @JoinColumn(name = "FACULTY_ID"),
+//	inverseJoinColumns = @JoinColumn(name = "SKILL_ID"))
+//	private List<Skills> listOfSkills = new ArrayList<Skills>();
+//	
+	@Column(name ="skills")
+	private String[] skills;
 	/**
 	 * Default Constructor
 	 */
@@ -75,19 +72,15 @@ public class Faculty {
 		this.facultyName = facultyName;
 	}
 
-	/**
-	 * @return the listOfSkillSet
-	 */
-	public List<Skills> getListOfSkills() {
-		return listOfSkills;
+	public String[] getSkills() {
+		return skills;
 	}
 
-	/**
-	 * @param listOfSkillSet the listOfSkillSet to set
-	 */
-	public void setListOfSkillSet(List<Skills> listOfSkills) {
-		this.listOfSkills = listOfSkills;
+	public void setSkills(String[] skills) {
+		this.skills = skills;
 	}
+
+	
 
 	
 }

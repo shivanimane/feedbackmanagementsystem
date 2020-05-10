@@ -1,12 +1,6 @@
 
 package com.cg.bean;
 
-
-
-
-
-
-
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -23,36 +17,35 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 /**
  * @author Uma Shankar
  *
- * 06-May-2020 9:07:23 pm
+ *         06-May-2020 9:07:23 pm
  */
 @Entity
 @Table(name = "TRAINING_PROGRAM")
 public class TrainingProgram {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name ="TRAINING_CODE")
+	@Column(name = "TRAINING_CODE")
 	private Integer trainingCode;
-	
+
 	@JoinColumn(name = "COURSE_ID")
 	@ManyToOne
 	private Course course;
-	
+
 	@JoinColumn(name = "FACULTY_ID")
 	@OneToOne
 	private Faculty faculty;
-	
-	@Temporal(value=TemporalType.DATE)
+
+	@Temporal(value = TemporalType.DATE)
 	@Column(name = "START_DATE")
 	@DateTimeFormat(style = "yyyy-mm-dd")
 	private Date startDate;
-	
-	@Temporal(value=TemporalType.DATE)
-	@Column(name="END_DATE")
+
+	@Temporal(value = TemporalType.DATE)
+	@Column(name = "END_DATE")
 	@DateTimeFormat(style = "yyyy-mm-dd")
 	private Date endDate;
 
@@ -95,6 +88,5 @@ public class TrainingProgram {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	
-	
+
 }

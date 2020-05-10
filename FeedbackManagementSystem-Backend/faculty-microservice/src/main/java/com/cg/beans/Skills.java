@@ -12,12 +12,24 @@ import javax.persistence.Table;
 
 public class Skills {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	@Column(name ="SKILL_ID")
 	private Integer skillId;
 	
 	@Column(name="SKILL_NAME")
 	private String skillName;
+	
+	@Column
+	private String checked;
+	
+
+	public String isChecked() {
+		return checked;
+	}
+
+	public void setChecked(String checked) {
+		this.checked = checked;
+	}
 
 	/**
 	 * 

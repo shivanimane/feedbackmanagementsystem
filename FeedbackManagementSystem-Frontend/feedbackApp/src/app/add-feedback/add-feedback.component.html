@@ -1,0 +1,103 @@
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+  <div class="col">
+    <div class="form-group">
+      <label for="name">Training Program</label>
+        <input
+        name="trainingprogram"
+        placeholder="Choose Training Program"
+        ngModel
+        #trainingProgram="ngModel"
+        class="form-control">
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-group">
+      <label for="name">Faculty</label>
+        <input
+        name="faculty"
+        placeholder="Choose Faculty"
+        ngModel
+        #faculty="ngModel"
+        class="form-control">
+    </div>
+  </div>
+
+  <!--Presentation and Communication -->
+  <div class="col">
+    <div class="form-group">
+        <label>Feedback for Presentation and Communication Skills</label>
+        <bar-rating name="fbPrsComm" [max]="5" [theme]="'stars'" required ngModel name="fbPrsComm" #fbPrsComm="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && fbPrsComm.invalid">Required</div>
+  </div>
+
+  <!--Ability to Clarify Doubts -->
+  <div class="col">
+    <div class="form-group">
+        <label>Feedback for Ability to Clarify Doubts</label>
+        <bar-rating name="fbClrfyDbts" [max]="5" [theme]="'stars'" required ngModel name="fbClrfyDbts" #fbClrfyDbts="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && fbClrfyDbts.invalid">Required</div>
+  </div>
+
+  <!--Time Management Skills -->
+  <div class="col">
+    <div class="form-group">
+        <label>Feedback for Time Management Skills</label>
+        <bar-rating name="fbTm" [max]="5" [theme]="'stars'" required name="fbTm"ngModel #fbTm="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && fbTm.invalid">Required</div>
+  </div>
+
+   <!--Providing Handouts and other material -->
+   <div class="col">
+    <div class="form-group">
+        <label>Feedback for Providing Handouts and other material</label>
+        <bar-rating name="fbHndOut" [max]="5" [theme]="'stars'" required name="fbHndOut" ngModel #fbHndOut="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && fbHndOut.invalid">Required</div>
+  </div>
+
+   <!--Hardware, Software and Network Ability -->
+   <div class="col">
+    <div class="form-group">
+        <label>Feedback for Hardware, Software and Network Ability</label>
+        <bar-rating [(rate)]="rate" [max]="5" [theme]="'stars'" required name="fbHwSwNtwrk" ngModel #fbHwSwNtwrk="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && fbHwSwNtwrk.invalid">Required</div>
+  </div>
+
+  <div class="col">
+    <div class="form-group">
+      <label for="name">Comments</label>
+        <input
+        name="comments"
+        placeholder="Comments.."
+        ngModel
+        #comments="ngModel"
+        class="form-control">
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="form-group">
+      <label >Suggestions</label>
+        <input
+        name="suggestions"
+        placeholder="Suggestions.."
+        ngModel
+        #suggestions="ngModel"
+        class="form-control">
+    </div>
+  </div>
+
+ <!--Date of Feeback Submission-->
+
+  <!-- Submit Button -->
+  <div class="col">
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </div>
+</form>

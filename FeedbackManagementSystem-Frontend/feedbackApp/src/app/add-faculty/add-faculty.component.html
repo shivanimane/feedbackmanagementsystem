@@ -1,7 +1,15 @@
+<table>
+  <label >Select Skills </label>
+  <tr *ngFor="let s of selectedSkills;let i=index">
+    <td>{{s}}</td>
+    <td><button class="btn btn-warning" (click)="add(i)">add</button></td>
+  </tr>
+</table>
+
 <form (ngSubmit) = "saveFaculty(); addFacultyForm.reset()" #addFacultyForm=ngForm>
   <div>
     <table>
-      <tr>
+      <!-- <tr>
         <td><label> Faculty ID </label></td>
         <td>
           <input name="facultyId" class="form-control" 
@@ -10,7 +18,7 @@
           required pattern="[0-9]{1,2}" 
           #facultyId=ngModel>
         </td>
-      </tr>
+      </tr> -->
       <tr>
         <td><label> Faculty Name </label></td>
         <td>
@@ -24,27 +32,9 @@
       <tr>
   
         <!-- <th>ID</th> -->
-        <th>Skills</th>
-        
-      </tr>
-      <tr *ngFor="let s of skills;let i = index">
-         <!-- <td>{{s.skillId}}</td>
-         <td>{{s.skillName}}</td>
-         <td><button class="btn btn-warning" (click)="add(i)">add</button></td>
-         -->
-         <!-- <div class="checkbox">
-          <label><input type="checkbox" 
-            name="selectedSkill" 
-            [(ngModel)]="s.checked"
-            >{{s.skillName}}</label>
-        </div> -->
-        <div class="checkbox">
-          <label><input type="checkbox" 
-            name="selectedSkill" 
-            [checked]="skills[i].checked" (change)="skills[i].checked= !skills[i].checked"
-            >{{s.skillName}}</label>
-        </div>
-      </tr>
+      
+    
+     
     </table>
   </div>
   <div>
