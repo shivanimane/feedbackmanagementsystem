@@ -3,7 +3,9 @@
  */
 package com.cg.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,8 +15,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import com.cg.bean.Course;
+import com.cg.bean.Faculty;
 import com.cg.bean.TrainingProgram;
+import com.cg.bean.TrainingProgramDate;
 import com.cg.service.TrainingProgramMaintainance;
 
 /**
@@ -25,6 +31,9 @@ import com.cg.service.TrainingProgramMaintainance;
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class TrainingProgramController {
+	
+	@Autowired
+	private RestTemplate restTemplate;
 
 	@Autowired
 	TrainingProgramMaintainance trainingProgramMaintainance;
@@ -42,11 +51,32 @@ public class TrainingProgramController {
 
 		return trainingProgram;
 	}
-	//http://localhost:5056/coordinator/addTrainingProgram
-	@PostMapping("/coordinator/addTrainingProgram")
-	public TrainingProgram createTrainingProgram(@RequestBody TrainingProgram trainingProgram) {
-
-		return this.trainingProgramMaintainance.addTrainingProgram(trainingProgram);
+	//http://localhost:5056/coordinator/addTrainingProgram/{courseId}/{facultyId}
+	@PostMapping("/coordinator/addTrainingProgram/{courseId}/{facultyId}")
+	public TrainingProgram createTrainingProgram(@RequestBody TrainingProgramDate trainingProgramDate,
+			@PathVariable(value = "courseId") Integer courseId ,@PathVariable(value="facultyId") Integer facultyId ) {
+		
+		Map<String, Integer> params = new HashMap<String, Integer>();
+		params.put("id", courseId);
+		String url = "http://localhost:5057/admin/getCourseById/{id}";
+		Course course = restTemplate.getForObject(url, Course.class, params);
+		System.out.println(course.getCourseId());
+		
+		Map<String, Integer> param = new HashMap<String, Integer>();
+		param.put("facultyId", facultyId);
+		String urll = "http://localhost:5053/faculty/getFacultyById/{facultyId}";
+		Faculty faculty = restTemplate.getForObject(urll, Faculty.class, param);
+		System.out.println(faculty.getFacultyId());
+		
+		TrainingProgram tp = new TrainingProgram();
+		
+		tp.setStartDate(trainingProgramDate.getStartDate());
+		tp.setEndDate(trainingProgramDate.getEndDate());
+		tp.setCourseName(course.getCourseName());
+		tp.setFacultyName(faculty.getFacultyName());
+		
+		System.out.println(tp);
+		return this.trainingProgramMaintainance.addTrainingProgram(tp);
 
 	}
 	

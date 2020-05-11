@@ -1,33 +1,21 @@
 
 package com.cg.bean;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-
 /**
  * @author Uma Shankar
  *
  * 04-May-2020 2:35:08 pm
  */
-@Entity
-@Table(name = "COURSE_MASTER")
+
 public class Course {
 	
-	@Id
-	@Column(name = "COURSE_ID")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private Integer courseId;
 	
 	
-	@Column(name = "COURSE_NAME")
 	private String courseName;
 	
-	@Column(name = "NO_OF_DAYS")
+	
 	private Integer noOfDays;
 
 	public Integer getCourseId() {

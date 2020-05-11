@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingProgramService } from '../service/training-program.service';
 import { Router } from '@angular/router';
-import { TrainingProgramModel } from '../models/trainingprogram.model';
+import { TrainingProgramDateModel } from '../models/trainingProgramDate.model';
+import { CourseModel } from '../models/course.model';
+import { CourseService } from '../service/course.service';
+import { FacultyService } from '../service/faculty.service';
+import { FacultyModel } from '../models/faculty.model';
+
 
 
 @Component({
@@ -10,20 +15,45 @@ import { TrainingProgramModel } from '../models/trainingprogram.model';
   styleUrls: ['./add-trainingprogram.component.css']
 })
 export class AddTrainingprogramComponent implements OnInit {
-  trainingProgram: TrainingProgramModel;
+  trainingProgramDate : TrainingProgramDateModel ;
+  courses: CourseModel[] = [];
+  faculty: FacultyModel[] = [];
+  courseId: number;
+  facultyId: number;
 
-  constructor(private service: TrainingProgramService, private route: Router) {
-    this.trainingProgram = new TrainingProgramModel();
+
+  constructor(private service: TrainingProgramService,
+    private route: Router, private courseService: CourseService, private facultyService: FacultyService) {
+    this.trainingProgramDate = new TrainingProgramDateModel();
   }
 
   ngOnInit() {
+    this.courseService.fetchAllCourses().subscribe(data => {
+      this.courses = data;
+      console.log(this.courses);
+    });
+
+    this.facultyService.fetchAllFaculties().subscribe(data => {
+      this.faculty = data;
+      console.log(this.faculty);
+    });
+
   }
 
+  addCourse(cnumber: number) {
+    this.courseId = cnumber;
+    console.log(cnumber);
+
+  }
+
+  addFaculty(fnumber: number) {
+    this.facultyId = fnumber;
+    console.log(fnumber);
+
+  }
 
   savetrainingProgram() {
-
-    console.log(this.trainingProgram.trainingCode, this.trainingProgram.course, this.trainingProgram.endDate, this.trainingProgram.faculty, this.trainingProgram.startDate);
-    this.service.addtrainingProgram(this.trainingProgram).subscribe(response => {
+    this.service.addtrainingProgram(this.trainingProgramDate , this.courseId ,this.facultyId).subscribe(response => {
       this.route.navigate(['list-trainingProgram']);
     });
 

@@ -19,7 +19,8 @@ export class FeedbackService {
   }
 
   fetchFeedbackByFacultyId(index:number){
-    return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/{facultyId}");
+    //return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/{facultyId}");
+    return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/"+index);
   }
 
   fetchFeedbackByTrainingCode(index:number){

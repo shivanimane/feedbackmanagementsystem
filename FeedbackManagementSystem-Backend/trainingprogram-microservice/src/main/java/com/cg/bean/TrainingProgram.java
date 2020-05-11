@@ -8,9 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,13 +28,11 @@ public class TrainingProgram {
 	@Column(name = "TRAINING_CODE")
 	private Integer trainingCode;
 
-	@JoinColumn(name = "COURSE_ID")
-	@ManyToOne
-	private Course course;
+	@Column(name = "COURSE_NAME")
+	private String courseName;
 
-	@JoinColumn(name = "FACULTY_ID")
-	@OneToOne
-	private Faculty faculty;
+	@Column(name = "FACULTY_NAME")
+	private String facultyName ;
 
 	@Temporal(value = TemporalType.DATE)
 	@Column(name = "START_DATE")
@@ -57,20 +52,20 @@ public class TrainingProgram {
 		this.trainingCode = trainingCode;
 	}
 
-	public Course getCourse() {
-		return course;
+	public String getCourseName() {
+		return courseName;
 	}
 
-	public void setCourse(Course course) {
-		this.course = course;
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
 
-	public Faculty getFaculty() {
-		return faculty;
+	public String getFacultyName() {
+		return facultyName;
 	}
 
-	public void setFaculty(Faculty faculty) {
-		this.faculty = faculty;
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
 	}
 
 	public Date getStartDate() {

@@ -1,6 +1,6 @@
 export class EmployeeModel{
-    employeeId : number;
-    employeeName : String;
-    password : String;
-    role : String;
+    employeeId : string;
+    employeeName : string;
+    password : string;
+    role : string;
 }

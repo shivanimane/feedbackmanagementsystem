@@ -16,12 +16,12 @@ import { AddFacultyComponent } from './add-faculty/add-faculty.component';
 import { ListFacultyComponent } from './list-faculty/list-faculty.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
-<<<<<<< HEAD
 import { AddTrainingprogramComponent } from './add-trainingprogram/add-trainingprogram.component';
 import { ListTrainingProgramComponent } from './list-training-program/list-training-program.component';
+<<<<<<< HEAD
 =======
 import { ListFeedbackFacultyComponent } from './list-feedback-faculty/list-feedback-faculty.component';
->>>>>>> ff655218054cbe66460fe9b431e4ed832a142fc7
+>>>>>>> 41110078144c9b85ffe8c338c317bdd66fe306c6
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -34,12 +34,12 @@ const routes : Routes = [
   {path:'coordinator', component:CoordinatorComponent},
   {path:'participant', component:ParticipantComponent},
   {path:'add-feedback', component:AddFeedbackComponent},
-<<<<<<< HEAD
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
+<<<<<<< HEAD
 =======
-  {path:'list-feedback-faculty/:id', component:AddFeedbackComponent},
->>>>>>> ff655218054cbe66460fe9b431e4ed832a142fc7
+  {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
+>>>>>>> 41110078144c9b85ffe8c338c317bdd66fe306c6
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
@@ -57,12 +57,13 @@ const routes : Routes = [
     AddFacultyComponent,
     ListFacultyComponent,
     AddFeedbackComponent,
-<<<<<<< HEAD
     AddTrainingprogramComponent,
+<<<<<<< HEAD
     ListTrainingProgramComponent
 =======
+    ListTrainingProgramComponent,
     ListFeedbackFacultyComponent
->>>>>>> ff655218054cbe66460fe9b431e4ed832a142fc7
+>>>>>>> 41110078144c9b85ffe8c338c317bdd66fe306c6
   ],
   imports: [
     BrowserModule,
