@@ -1,37 +1,59 @@
-<form (ngSubmit)="savetrainingProgram(); addtrainingForm.reset()" #addtrainingForm=ngForm>
-  <div>
-    <table>
-      <tr>
-        <td><label> Course ID </label></td>
-        <td>
-          <input class="form-control" [(ngModel)]=trainingProgram.course.courseId
-            placeholder="Enter Course ID" required pattern="[0-9]{1,2}" #course=ngModel>
-        </td>
-      </tr>
-      <tr>
-        <td><label> Faculty ID </label></td>
-        <td>
-          <input  class="form-control" [(ngModel)]=traningProgram.faculty.facultyId
-            placeholder="Enter Faculty ID" required pattern="[0-9]{1,2}" #faculty=ngModel>
-        </td>
-      </tr>
-      <tr>
-        <td><label> Start Date </label></td>
-        <td>
-          <input type="date" name="Start Date" class="form-control" [(ngModel)]=trainingProgram.startDate
-            placeholder="Enter Start Date"  #startdate=ngModel>
-        </td>
-      </tr>
-      <tr>
-        <td><label> End Date </label></td>
-        <td>
-          <input type="date" name="end Date" class="form-control" [(ngModel)]=trainingProgram.endDate
-            placeholder="Enter end Date"  #enddate=ngModel>
-        </td>
-      </tr>
-    </table>
-  </div>
-  <div>
-    <button class="btn btn-primary" type="submit" [disabled]="!addtraining.valid">Add trainingProgram</button>
-  </div>
-</form>
+<div>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Course Id </th>
+      <th>Course Name </th>
+      <th>No of Days</th>
+      <th>Add Course</th>
+      
+    </tr>
+    <tr *ngFor="let c of courses; let i =index">
+    <td>{{c.courseId}}</td>
+    <td>{{c.courseName}}</td>
+    <td>{{c.noOfDays}}</td>
+    <td><button class="btn btn-warning" (click)="addCourse(c.courseId)">Add</button></td>
+  </tr>
+  </table>
+  
+  <table class="table table-striped">
+    <tr>
+      <th>Faculty Id </th>
+      <th>Faculty Name </th>
+      <th>Skills</th>
+      <th>Add Faculty</th>
+      
+    </tr>
+    <tr *ngFor="let f of faculty; let i =index">
+    <td>{{f.facultyId}}</td>
+    <td>{{f.facultyName}}</td>
+    <td>{{f.skills}}</td>
+    <td><button class="btn btn-warning" (click)="addFaculty(f.facultyId)">Add</button></td>
+  </tr>
+  </table>
+  
+  <form (ngSubmit)="savetrainingProgram()" #addtrainingForm=ngForm>
+    <div>
+      <table>
+       <tr>
+          <td><label> Start Date </label></td>
+          <td>
+            <input type="date" name="Start Date" class="form-control" [(ngModel)]="trainingProgramDate.startDate"
+              placeholder="Enter Start Date"  #startdate="ngModel">
+          </td>
+        </tr>
+        <tr>
+          <td><label> End Date </label></td>
+          <td>
+            <input type="date" name="end Date" class="form-control" [(ngModel)]="trainingProgramDate.endDate"
+              placeholder="Enter end Date"  #enddate="ngModel">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <button class="btn btn-primary" type="submit" >Add trainingProgram</button>
+    </div>
+  </form>
+
+</div>

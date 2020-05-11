@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {TrainingProgramModel} from '../models/trainingprogram.model'
 import {HttpClient} from '@angular/common/http';
+import { TrainingProgramDateModel } from '../models/trainingProgramDate.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ trainingProgram : TrainingProgramModel[] = [];
   constructor(private http : HttpClient) { }
 
  //Add trainingPrograms
- addtrainingProgram(trainingProgram : TrainingProgramModel){
-  return this.http.post("http://localhost:5056/coordinator/addTrainingProgram" , trainingProgram);
+ addtrainingProgram(trainingProgramDate : TrainingProgramDateModel,courseId : number , facultyId : number){
+  return this.http.post("http://localhost:5056/coordinator/addTrainingProgram/"+courseId+"/"+facultyId , trainingProgramDate);
 }
 
 fetchAlltrainingPrograms(){
