@@ -1,43 +1,25 @@
 <table>
-  <label >Select Skills </label>
+  <label>Select Skills </label>
   <tr *ngFor="let s of selectedSkills;let i=index">
     <td>{{s}}</td>
     <td><button class="btn btn-warning" (click)="add(i)">add</button></td>
   </tr>
 </table>
 
-<form (ngSubmit) = "saveFaculty(); addFacultyForm.reset()" #addFacultyForm=ngForm>
+<form (ngSubmit)="saveFaculty(); addFacultyForm.reset()" #addFacultyForm=ngForm>
   <div>
     <table>
-      <!-- <tr>
-        <td><label> Faculty ID </label></td>
-        <td>
-          <input name="facultyId" class="form-control" 
-          [(ngModel)]=faculty.facultyId 
-          placeholder="Enter Faculty ID" 
-          required pattern="[0-9]{1,2}" 
-          #facultyId=ngModel>
-        </td>
-      </tr> -->
       <tr>
         <td><label> Faculty Name </label></td>
         <td>
-          <input name="facultyName" class="form-control" 
-          [(ngModel)]=faculty.facultyName 
-          placeholder="Enter Faculty Name" 
-          required pattern="[A-Z][a-z]{1,}" 
-          #facultyName=ngModel>
+          <input name="facultyName" class="form-control" [(ngModel)]=faculty.facultyName
+            placeholder="Enter Faculty Name" required pattern="[A-Z][a-z]{1,}" #facultyName=ngModel>
         </td>
       </tr>
       <tr>
-  
-        <!-- <th>ID</th> -->
-      
-    
-     
     </table>
   </div>
   <div>
-    <button class="btn btn-primary" type="submit" [disabled] = "!addFacultyForm.valid">Add Faculty</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!addFacultyForm.valid">Add Faculty</button>
   </div>
 </form>

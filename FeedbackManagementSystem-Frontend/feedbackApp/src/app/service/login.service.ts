@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../models/login.model';
+import { EmployeeModel } from '../models/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class LoginService {
    fetchLoginList():Login[]{
      console.log(this.loginList);
     return this.loginList;
+   }
+
+   getEmployee(login : Login){
+     return this.http.post<EmployeeModel>("http://localhost:8035/login/validate",login);
    }
 }

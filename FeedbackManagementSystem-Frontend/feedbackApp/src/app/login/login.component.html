@@ -2,7 +2,7 @@
   <table class="table table-responsive">
     <tr><td>Enter Username</td>
     <td>
-      <input [(ngModel)]="login.username" name="username" placeholder="Enter Username" required pattern="[A-Za-z]{4,}" #username = ngModel>
+      <input [(ngModel)]="login.name" name="username" placeholder="Enter Username" required pattern="[A-Za-z]{4,}" #username = ngModel>
       <div *ngIf="username.dirty && username.touched && username.invalid" class="alert alert-danger">
         Username is invalid
       </div>

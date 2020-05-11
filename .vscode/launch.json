@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LoginMicroserviceApplication<LoginMicroservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.LoginMicroserviceApplication",
+            "projectName": "LoginMicroservice",
+            "args": ""
+        }
+    ]
+}
