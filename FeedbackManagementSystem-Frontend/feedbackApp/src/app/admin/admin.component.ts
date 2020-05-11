@@ -11,6 +11,7 @@ export class AdminComponent implements OnInit {
   constructor(private route : Router) { }
 
   ngOnInit() {
+    alert("Hello "+localStorage.getItem('user'));
   }
 
   clickOnAddCourse(){

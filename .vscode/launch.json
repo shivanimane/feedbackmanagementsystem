@@ -9,6 +9,16 @@
             "mainClass": "com.cg.LoginMicroserviceApplication",
             "projectName": "LoginMicroservice",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EmployeeMicroserviceApplication<EmployeeMicroservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cg.EmployeeMicroserviceApplication",
+            "projectName": "EmployeeMicroservice",
+            "args": ""
         }
     ]
 }
