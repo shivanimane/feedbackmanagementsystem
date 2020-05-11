@@ -17,7 +17,7 @@ export class FacultyService {
   }
 
   fetchAllFaculties(){
-    return this.faculties;
+    return this.http.get<FacultyModel[]>("http://localhost:5053/faculty/getAllFaculty");
   }
 
   deleteFaculty(index : number){
