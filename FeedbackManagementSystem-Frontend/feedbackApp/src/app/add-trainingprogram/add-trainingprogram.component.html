@@ -1,0 +1,37 @@
+<form (ngSubmit)="savetrainingProgram(); addtrainingForm.reset()" #addtrainingForm=ngForm>
+  <div>
+    <table>
+      <tr>
+        <td><label> Course ID </label></td>
+        <td>
+          <input class="form-control" [(ngModel)]=trainingProgram.course.courseId
+            placeholder="Enter Course ID" required pattern="[0-9]{1,2}" #course=ngModel>
+        </td>
+      </tr>
+      <tr>
+        <td><label> Faculty ID </label></td>
+        <td>
+          <input  class="form-control" [(ngModel)]=traningProgram.faculty.facultyId
+            placeholder="Enter Faculty ID" required pattern="[0-9]{1,2}" #faculty=ngModel>
+        </td>
+      </tr>
+      <tr>
+        <td><label> Start Date </label></td>
+        <td>
+          <input type="date" name="Start Date" class="form-control" [(ngModel)]=trainingProgram.startDate
+            placeholder="Enter Start Date"  #startdate=ngModel>
+        </td>
+      </tr>
+      <tr>
+        <td><label> End Date </label></td>
+        <td>
+          <input type="date" name="end Date" class="form-control" [(ngModel)]=trainingProgram.endDate
+            placeholder="Enter end Date"  #enddate=ngModel>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit" [disabled]="!addtraining.valid">Add trainingProgram</button>
+  </div>
+</form>

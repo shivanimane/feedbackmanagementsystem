@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
 import { Login } from './models/login.model';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -16,6 +16,8 @@ import { AddFacultyComponent } from './add-faculty/add-faculty.component';
 import { ListFacultyComponent } from './list-faculty/list-faculty.component';
 import { BarRatingModule } from "ngx-bar-rating";
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
+import { AddTrainingprogramComponent } from './add-trainingprogram/add-trainingprogram.component';
+import { ListTrainingProgramComponent } from './list-training-program/list-training-program.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -28,6 +30,8 @@ const routes : Routes = [
   {path:'coordinator', component:CoordinatorComponent},
   {path:'participant', component:ParticipantComponent},
   {path:'add-feedback', component:AddFeedbackComponent},
+  {path:'add-training',component:AddTrainingprogramComponent},
+  {path:'list-training',component:ListTrainingProgramComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
@@ -44,7 +48,9 @@ const routes : Routes = [
     ListCourseComponent,
     AddFacultyComponent,
     ListFacultyComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
+    AddTrainingprogramComponent,
+    ListTrainingProgramComponent
   ],
   imports: [
     BrowserModule,

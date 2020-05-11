@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coordinator',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoordinatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route : Router) { }
 
   ngOnInit() {
   }
 
+  clickOnAddTrainingProgram(){
+    this.route.navigate(['add-training']);
+  }
+
+  clickOnListTrainingProgram(){
+    this.route.navigate(['list-training']);
+  }
+
+  
 }
