@@ -9,8 +9,10 @@ import { EmployeeModel } from '../models/employee.model';
 export class LoginService {
 
   loginList : Login[] = [];
+  
 
   constructor(public http : HttpClient) {
+    
     this.http.get<Login[]>("../assets/login.json")
     .subscribe(data =>{
       this.loginList = data;
@@ -23,6 +25,7 @@ export class LoginService {
    }
 
    getEmployee(login : Login){
+     console.log(login);
      return this.http.post<EmployeeModel>("http://localhost:8035/login/validate",login);
    }
 }
