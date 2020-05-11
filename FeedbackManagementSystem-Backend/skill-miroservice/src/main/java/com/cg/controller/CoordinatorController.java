@@ -17,7 +17,7 @@ import com.cg.service.CoordinatorService;
 
 @RestController
 @RequestMapping("/coordinator")
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
 public class CoordinatorController {
 	
 	@Autowired

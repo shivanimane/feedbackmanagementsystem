@@ -29,36 +29,36 @@ public class TrainingProgramController {
 	@Autowired
 	TrainingProgramMaintainance trainingProgramMaintainance;
 
-	//http://localhost:5056/admin/getAllTrainingProgramList
-	@GetMapping("/admin/getAllTrainingProgramList")
+	//http://localhost:5056/coordinator/getAllTrainingProgramList
+	@GetMapping("/coordinator/getAllTrainingProgramList")
 	public List<TrainingProgram> getAllTrainingProgramList() {
 		return this.trainingProgramMaintainance.getAllTrainingProgram();
 	}
 
-	//http://localhost:5056/admin/getTrainingById/{id}
-	@GetMapping("/admin/getTrainingById/{id}")
+	//http://localhost:5056/coordinator/getTrainingById/{id}
+	@GetMapping("/coordinator/getTrainingById/{id}")
 	public TrainingProgram getTrainingProgramById(@PathVariable(value = "id") Integer trainingCode) {
 		TrainingProgram trainingProgram = this.trainingProgramMaintainance.getTrainingProgramById(trainingCode);
 
 		return trainingProgram;
 	}
-	//http://localhost:5056/admin/addTrainingProgram
-	@PostMapping("/admin/addTrainingProgram")
+	//http://localhost:5056/coordinator/addTrainingProgram
+	@PostMapping("/coordinator/addTrainingProgram")
 	public TrainingProgram createTrainingProgram(@RequestBody TrainingProgram trainingProgram) {
 
 		return this.trainingProgramMaintainance.addTrainingProgram(trainingProgram);
 
 	}
 	
-	//http://localhost:5056/admin/deleteTrainingProgram/{id}
-	@DeleteMapping("/admin/deleteTrainingProgram/{id}")
+	//http://localhost:5056/coordinator/deleteTrainingProgram/{id}
+	@DeleteMapping("/coordinator/deleteTrainingProgram/{id}")
 	public Boolean deleteCourse(@PathVariable(value = "id") Integer trainingCode) {
 
 	   return this.trainingProgramMaintainance.deleteTrainingProgram(trainingCode);
 	}
 	
-	@GetMapping("/admin/checkTrainingProgram/{trainingCode}")
-	public Boolean isTrainingProgram(@PathVariable Integer trainingCode) {
+	@GetMapping("/coordinator/checkTrainingProgram/{trainingCode}")
+	public TrainingProgram isTrainingProgram(@PathVariable Integer trainingCode) {
 		return this.trainingProgramMaintainance.isTrainingProgram(trainingCode);
 	}
 

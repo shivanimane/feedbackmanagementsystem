@@ -18,6 +18,18 @@ public class Skills {
 	
 	@Column(name="SKILL_NAME")
 	private String skillName;
+	
+	@Column
+	private boolean checked;
+	
+
+	public boolean isChecked() {
+		return checked;
+	}
+
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
 
 	/**
 	 * 

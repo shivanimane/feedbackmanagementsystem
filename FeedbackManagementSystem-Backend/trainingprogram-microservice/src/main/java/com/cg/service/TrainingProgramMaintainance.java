@@ -5,6 +5,8 @@ package com.cg.service;
 
 import java.util.List;
 
+import com.cg.bean.Employee;
+import com.cg.bean.ParticipantEnrolled;
 import com.cg.bean.TrainingProgram;
 
 /**
@@ -18,6 +20,7 @@ public interface TrainingProgramMaintainance {
 	TrainingProgram getTrainingProgramById(Integer trainingCode );
 	TrainingProgram addTrainingProgram(TrainingProgram trainingProgram);
 	Boolean deleteTrainingProgram(Integer trainingCode);
-	boolean isTrainingProgram(Integer trainingCode); 
+	TrainingProgram isTrainingProgram(Integer trainingCode); 
+	ParticipantEnrolled enrollParticipant(Employee employee , TrainingProgram tp);
 
 }
