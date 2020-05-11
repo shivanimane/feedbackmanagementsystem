@@ -42,4 +42,8 @@ export class AddFacultyComponent implements OnInit {
       this.route.navigate(['list-faculty'])
     });
   }
+
+  redirectToAdmin(){
+    this.route.navigate(['admin']);
+  }
 }    

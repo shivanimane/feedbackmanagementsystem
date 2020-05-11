@@ -11,19 +11,19 @@ export class FeedbackService {
   constructor(private http: HttpClient) { }
 
   addFeedback(feedback : FeedbackModel){
-    return this.http.post("http://localhost:5053/feedback/addFeedback" , feedback);
+    return this.http.post("http://localhost:5054/feedback/addFeedback" , feedback);
   }
 
   fetchAllFeedback(){
-    return this.http.get<FeedbackModel[]>("http://localhost:5053/feedback/allFeedback");
+    return this.http.get<FeedbackModel[]>("http://localhost:5054/feedback/allFeedback");
   }
 
   fetchFeedbackByFacultyId(index:number){
     //return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/{facultyId}");
-    return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/"+index);
+    return this.http.get<FeedbackModel>("http://localhost:5054/feedback/forEachFaculty/"+index);
   }
 
   fetchFeedbackByTrainingCode(index:number){
-    return this.http.get<TrainingProgramModel>("http://localhost:5053/feedback/forEachTrainingProgram/{trainingCode}");
+    return this.http.get<TrainingProgramModel>("http://localhost:5054/feedback/forEachTrainingProgram/{trainingCode}");
   }
 }

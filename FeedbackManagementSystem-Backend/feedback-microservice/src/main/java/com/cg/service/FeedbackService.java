@@ -27,7 +27,7 @@ public interface FeedbackService {
 	
 	 Feedback addFeedback(Feedback feedback);
 	 List<Feedback> getAllFeedback();
-	 List<Feedback> getFeedbackByFacultyId(Integer facultyId);
-	 List<Feedback> getFeedbackByTrainingProgram(Integer trainingCode);
+	 Feedback getFeedbackByFacultyId(Integer facultyId);
+	 Feedback getFeedbackByTrainingProgram(Integer trainingCode);
 	
 }

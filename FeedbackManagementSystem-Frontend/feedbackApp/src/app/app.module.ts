@@ -18,6 +18,7 @@ import { BarRatingModule } from "ngx-bar-rating";
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 import { AddTrainingprogramComponent } from './add-trainingprogram/add-trainingprogram.component';
 import { ListTrainingProgramComponent } from './list-training-program/list-training-program.component';
+import { ListFeedbackFacultyComponent } from './list-feedback-faculty/list-feedback-faculty.component';
 <<<<<<< HEAD
 =======
 import { ListFeedbackFacultyComponent } from './list-feedback-faculty/list-feedback-faculty.component';
@@ -36,10 +37,7 @@ const routes : Routes = [
   {path:'add-feedback', component:AddFeedbackComponent},
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
-<<<<<<< HEAD
-=======
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
->>>>>>> 41110078144c9b85ffe8c338c317bdd66fe306c6
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
@@ -58,12 +56,8 @@ const routes : Routes = [
     ListFacultyComponent,
     AddFeedbackComponent,
     AddTrainingprogramComponent,
-<<<<<<< HEAD
-    ListTrainingProgramComponent
-=======
     ListTrainingProgramComponent,
     ListFeedbackFacultyComponent
->>>>>>> 41110078144c9b85ffe8c338c317bdd66fe306c6
   ],
   imports: [
     BrowserModule,

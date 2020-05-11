@@ -17,6 +17,10 @@ export class AddCourseComponent implements OnInit {
   ngOnInit() {
   }
 
+  redirectToAdmin(){
+    this.route.navigate(['admin']);
+  }
+
   saveCourse(){
     
     console.log(this.course.courseName);
