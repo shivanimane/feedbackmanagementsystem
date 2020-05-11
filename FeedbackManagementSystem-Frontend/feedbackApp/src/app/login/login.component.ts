@@ -12,11 +12,11 @@ import { EmployeeModel } from '../models/employee.model';
 export class LoginComponent implements OnInit {
   login : Login; 
  // loginList : Login;
-  flag : EmployeeModel;
+  employee : EmployeeModel;
 
   constructor(private route: Router, private loginservice: LoginService) { 
     this.login = new Login();
-    this.flag = new EmployeeModel();
+    this.employee = new EmployeeModel();
   }
 
   ngOnInit() {
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
 
   checkLogin(){
     console.log(this.login);
-    this.loginservice.getEmployee(this.login).subscribe(data => this.flag = data);
-    console.log(this.flag);
+    this.loginservice.getEmployee(this.login).subscribe(data => this.employee = data);
+    console.log(this.employee);
 
   }
 

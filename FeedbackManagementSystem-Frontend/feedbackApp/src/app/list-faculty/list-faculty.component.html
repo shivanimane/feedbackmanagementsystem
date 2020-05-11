@@ -1,3 +1,16 @@
-<p>
-  list-faculty works!
-</p>
+<table class="table table-striped">
+  <tr>
+    <th>Faculty Id </th>
+    <th>Faculty Name </th>
+    <th>Skills</th>
+    <th>Generate Report</th>
+    
+  </tr>
+  <tr *ngFor="let f of faculty; let i =index">
+  <td>{{f.facultyId}}</td>
+  <td>{{f.facultyName}}</td>
+  <td>{{f.skills}}</td>
+  <td><button class="btn btn-warning" (click)="generateReport(f.facultyId)">Generate Report</button></td>
+  <!-- <td><button class="btn btn-warning" (click)="remove(i)">Delete</button></td> -->
+</tr>
+</table>

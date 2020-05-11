@@ -77,10 +77,10 @@ public class FeedbackController {
 		"faculty":{
 			"facultyId":1,
 			"facultyName":"ABC",
-			"listOfSkillSet":[{
-				"skillName":"abc"
-				
-			}]
+			"skills": [
+        			"Java",
+        			"AWS"
+    ]
 			},
 		"startDate":"2020-02-02",
 		"endDate":"2020-04-04"

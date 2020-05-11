@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CourseService {
-  courses : CourseModel[] = [];
+  //courses : CourseModel[] = [];
 
   constructor(private http: HttpClient) { }
 
