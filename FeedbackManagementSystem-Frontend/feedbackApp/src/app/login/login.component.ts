@@ -39,10 +39,13 @@ export class LoginComponent implements OnInit {
   checkLogin(){
     console.log(this.login);
     this.loginservice.getEmployee(this.login).subscribe(data =>{
-      this.employee = data;
-      console.log(this.employee);
+      this.loginservice.getEmployee(this.login).subscribe(data => {
+        this.employee = data;
+        this.checkRole(this.employee);
+      });
     } 
 
+   
   }
 
 }
