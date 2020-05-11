@@ -1,19 +1,18 @@
 <table class="table table-striped">
   <tr>
-    <th>Training Program Id </th>
-    <th>Course Id </th>
-    <th>Faculty Id</th>
+    <th>Course Name </th>
+    <th>Faculty Name</th>
     <th>Start Date</th>
     <th>End Date</th>
+    <th>Action</th>
     
   </tr>
-  <tr *ngFor="let c of trainingList; let i =index">
-  <td>{{c.trainingCode}}</td>
-  <td>{{c.course.courseId}}</td>
-  <td>{{c.faculty.facultyId}}</td>
+  <tr *ngFor="let c of trainingList">
+  <td>{{c.courseName}}</td>
+  <td>{{c.facultyName}}</td>
   <td>{{c.startDate}}</td>
   <td>{{c.endDate}}</td>
   
-  <td><button class="btn btn-warning" (click)="remove(i)">Delete</button></td>
+  <td><button class="btn btn-warning" (click)="deleteTraining(c.trainingCode)">Delete</button></td>
 </tr>
 </table>

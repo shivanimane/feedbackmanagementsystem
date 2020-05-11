@@ -12,19 +12,30 @@ export class ListTrainingProgramComponent implements OnInit {
   constructor(private service: TrainingProgramService) { }
 
   ngOnInit() {
+    setTimeout(() => { this.reloadData() }, 100);
+  }
+  reloadData() {
     this.service.fetchAlltrainingPrograms().subscribe(data => {
       this.trainingList = data;
       console.log(this.trainingList);
-    })
+    })   
   }
 
-  remove(index: number) {
+ /*  remove(index: number) {
     var ans = confirm("Are you sure you want to delete?");
     if (ans) {
       this.service.deletetrainingProgram(index).subscribe(response => {
         console.log(this.trainingList);
       });
     }
+  } */
+
+  deleteTraining(id:number){
+    this.service.deletetrainingProgram(id)
+    .subscribe(response => {console.log(response);
+    this.reloadData();
+  },
+     error => console.log(error));
   }
 
 }

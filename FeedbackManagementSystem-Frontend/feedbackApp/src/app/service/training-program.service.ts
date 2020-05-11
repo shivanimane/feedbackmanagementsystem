@@ -19,8 +19,8 @@ fetchAlltrainingPrograms(){
   return this.http.get<TrainingProgramModel[]>("http://localhost:5056/coordinator/getAllTrainingProgramList");
 }
 
-deletetrainingProgram(index : number){
-  return this.http.delete("http://localhost:5056/coordinator/deleteTrainingProgram/"+index);
+deletetrainingProgram(id : number){
+  return this.http.delete("http://localhost:5056/coordinator/deleteTrainingProgram/"+id);
 }
 
 

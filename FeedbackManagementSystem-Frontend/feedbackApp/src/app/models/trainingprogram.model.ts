@@ -1,8 +1,8 @@
 
 export class TrainingProgramModel{
     trainingCode : number;
-    coursename : String;
-    facultyname : String;
+    courseName : String;
+    facultyName : String;
     startDate : Date;
     endDate : Date;
 }
