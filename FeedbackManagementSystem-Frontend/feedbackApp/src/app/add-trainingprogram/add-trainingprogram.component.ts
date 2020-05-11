@@ -54,8 +54,13 @@ export class AddTrainingprogramComponent implements OnInit {
 
   savetrainingProgram() {
     this.service.addtrainingProgram(this.trainingProgramDate , this.courseId ,this.facultyId).subscribe(response => {
-      this.route.navigate(['list-trainingProgram']);
+      this.route.navigate(['list-training']);
     });
 
   }
+
+ 
+
+
+
 }
