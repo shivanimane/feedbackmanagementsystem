@@ -42,7 +42,7 @@ public class FeedbackController {
 	 * @param feedback
 	 * @return
 	 */
-	//localhost:5053/feedback/addFeedback
+	//localhost:5054/feedback/addFeedback
 	@PostMapping("/addFeedback")
 	public Feedback addFeedback(@RequestBody Feedback feedback) {
 		return feedbackService.addFeedback(feedback);
