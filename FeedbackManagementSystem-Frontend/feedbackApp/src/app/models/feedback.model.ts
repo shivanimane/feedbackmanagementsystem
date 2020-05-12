@@ -1,10 +1,8 @@
-import { TrainingProgramModel } from "./trainingprogram.model";
-import { EmployeeModel } from "./employee.model";
 
 export class FeedbackModel{
     feedbackId : number;
-    trainingProgram : TrainingProgramModel;
-    participantId : EmployeeModel;
+    participantId : number;
+    trainingCode : number ;
     fbPrsComm : number;
     fbClrfyDbts : number;
     fbTm : number;

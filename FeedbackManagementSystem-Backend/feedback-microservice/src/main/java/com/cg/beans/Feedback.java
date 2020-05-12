@@ -36,6 +36,9 @@ public class Feedback {
 	
 	@Column(name ="EMPLOYEE_ID")
 	private Integer participantId;
+	
+	@Column(name ="FACULTY_ID")
+	private Integer facultyId ;
 
 	/**
 	 * Feedback for Presentation and Communication Skills
@@ -250,6 +253,20 @@ public class Feedback {
 	 */
 	public void setFeedbackDate(Date feedbackDate) {
 		this.feedbackDate = feedbackDate;
+	}
+
+	/**
+	 * @return the facultyId
+	 */
+	public Integer getFacultyId() {
+		return facultyId;
+	}
+
+	/**
+	 * @param facultyId the facultyId to set
+	 */
+	public void setFacultyId(Integer facultyId) {
+		this.facultyId = facultyId;
 	}
 
 	

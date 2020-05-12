@@ -31,6 +31,9 @@ import com.cg.service.FeedbackService;
 public class FeedbackController {
 	
 	@Autowired
+	RestTemplate restTemplate ;
+	
+	@Autowired
 	FeedbackService feedbackService;
 	
 	

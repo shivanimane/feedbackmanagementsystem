@@ -9,11 +9,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import com.cg.beans.Faculty;
 import com.cg.beans.Feedback;
-import com.cg.beans.TrainingProgram;
 import com.cg.dao.FeedbackDao;
 
 /**
@@ -23,9 +20,6 @@ import com.cg.dao.FeedbackDao;
 @Service
 public class FeedbackServiceImpl implements FeedbackService{
 	
-	
-	@Autowired
-	private RestTemplate restTemplate;
 	
 	
 	@Autowired
