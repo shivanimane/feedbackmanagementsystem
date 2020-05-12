@@ -28,9 +28,9 @@ export class ParticipantComponent implements OnInit {
       console.log(this.trainingProgram);
     });
 
-    // if(this.trainingProgram.trainingCode==null){
-    //  this.flag = false;
-    // }
+    if(this.trainingProgram.trainingCode==null){
+     this.flag = false;
+    }
 
   }
 

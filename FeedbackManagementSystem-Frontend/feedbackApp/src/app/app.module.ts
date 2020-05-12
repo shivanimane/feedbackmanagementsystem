@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -22,6 +22,9 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ParticipantComponent } from './participant/participant.component';
 import { ListFeedbackTrainingProgramComponent } from './list-feedback-training-program/list-feedback-training-program.component';
 import { ListParticipantComponent } from './list-participant/list-participant.component';
+import { ErrorComponent } from './error/error.component';
+import { GlobalErrorService } from './service/global-error.service';
+
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -36,6 +39,7 @@ const routes : Routes = [
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
   {path:'participant', component:ParticipantComponent},
+  {path:'error/:errMsg', component:ErrorComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
@@ -60,7 +64,8 @@ const routes : Routes = [
     AddEmployeeComponent,
     ParticipantComponent,
     ListFeedbackTrainingProgramComponent,
-    ListParticipantComponent
+    ListParticipantComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,9 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     BarRatingModule
   ],
-  providers: [],
+  providers: [
+    {provide:ErrorHandler , useClass : GlobalErrorService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
