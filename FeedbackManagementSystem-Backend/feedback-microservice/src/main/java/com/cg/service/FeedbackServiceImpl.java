@@ -6,11 +6,12 @@
 package com.cg.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.cg.beans.Faculty;
 import com.cg.beans.Feedback;
 import com.cg.beans.TrainingProgram;
 import com.cg.dao.FeedbackDao;
@@ -23,7 +24,10 @@ import com.cg.dao.FeedbackDao;
 public class FeedbackServiceImpl implements FeedbackService{
 	
 	
-
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
 	@Autowired
 	FeedbackDao feedbackDao;
 	
@@ -41,13 +45,20 @@ public class FeedbackServiceImpl implements FeedbackService{
 	
 	@Override
 	public Feedback getFeedbackByFacultyId(Integer facultyId) {
-		//return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getFaculty().getFacultyId()==facultyId).findFirst().get();
+		//return this.feedbackDao.findAll().stream().filter(f->f.==facultyId).findFirst().get();
+//		String urll = "http://localhost:5053/faculty/getFacultyById/";
+//		Faculty faculty = restTemplate.getForObject(urll+facultyId, Faculty.class);
+//		
+		
+		//TrainingProgram tp = restTemplate.getForObject(url, responseType)
+		//return
 		return null;
 	}
 
 	@Override
 	public Feedback getFeedbackByTrainingProgram(Integer trainingCode) {
-		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getTrainingCode()==trainingCode).findFirst().get();
+		//return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getTrainingCode()==trainingCode).findFirst().get();
+		return null;
 	}
 
 }

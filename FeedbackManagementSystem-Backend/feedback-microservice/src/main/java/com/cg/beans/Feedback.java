@@ -13,14 +13,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -35,14 +30,12 @@ public class Feedback {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer feedbackId;
 	
-	@JoinColumn(name ="TRAINING_CODE")
-	@OneToOne
-	private TrainingProgram trainingCode;
+	@Column(name ="TRAINING_CODE")
+	private Integer trainingCode;
 	
 	
-	@JoinColumn(name ="EMPLOYEE_ID")
-	@OneToOne
-	private Employee participantId;
+	@Column(name ="EMPLOYEE_ID")
+	private Integer participantId;
 
 	/**
 	 * Feedback for Presentation and Communication Skills
@@ -122,28 +115,28 @@ public class Feedback {
 	/**
 	 * @return the trainingCode
 	 */
-	public TrainingProgram getTrainingCode() {
+	public Integer getTrainingCode() {
 		return trainingCode;
 	}
 
 	/**
 	 * @param trainingCode the trainingCode to set
 	 */
-	public void setTrainingCode(TrainingProgram trainingCode) {
+	public void setTrainingCode(Integer trainingCode) {
 		this.trainingCode = trainingCode;
 	}
 
 	/**
 	 * @return the participantId
 	 */
-	public Employee getParticipantId() {
+	public Integer getParticipantId() {
 		return participantId;
 	}
 
 	/**
 	 * @param participantId the participantId to set
 	 */
-	public void setParticipantId(Employee participantId) {
+	public void setParticipantId(Integer participantId) {
 		this.participantId = participantId;
 	}
 

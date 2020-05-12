@@ -74,6 +74,7 @@ public class TrainingProgramController {
 		tp.setEndDate(trainingProgramDate.getEndDate());
 		tp.setCourseName(course.getCourseName());
 		tp.setFacultyName(faculty.getFacultyName());
+		tp.setFacultyId(faculty.getFacultyId());
 		
 		System.out.println(tp);
 		return this.trainingProgramMaintainance.addTrainingProgram(tp);

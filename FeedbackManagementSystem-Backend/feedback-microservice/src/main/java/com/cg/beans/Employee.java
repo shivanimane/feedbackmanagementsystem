@@ -5,32 +5,19 @@
  */
 package com.cg.beans;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-
 /**
  * @author Shivani
  *
  */
 
-@Entity
-@Table(name ="EMPLOYEE_MASTER")
 public class Employee {
-	@Id
-	@Column(name="Employee_Id")
+
 	private Integer employeeId;
 	
-	@Column(name="Employee_NAME")
 	private String employeeName;
 	
-	@Column(name="PASSWORD")
 	private String password;
 	
-	@Column(name="ROLE")
 	private String role;
 	
 	/**
