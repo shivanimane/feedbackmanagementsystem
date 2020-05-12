@@ -1,5 +1,8 @@
 package com.cg.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +37,23 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public Employee checkRole(int empId) {
 		Employee employee = eDao.findById(empId).get();
 		return employee;
+	}
+
+	@Override
+	public List<Employee> getAllParticipant() {
+//		List<Employee> originalList = this.eDao.findAll();
+//		List<Employee> participantList = new ArrayList<>();
+//		for (int i = 0; i < originalList.size(); i++) {
+//			if(originalList.get(i).getRole().equalsIgnoreCase("participant")) {
+//			   participantList.add(originalList.get(i)); 
+//			}
+//		}
+//		
+//		return participantList ;
+		
+		return this.eDao.findAll().stream().filter(f->f.getRole().equalsIgnoreCase("participant")).collect(Collectors.toList());
+	
+		
 	}
 
 }

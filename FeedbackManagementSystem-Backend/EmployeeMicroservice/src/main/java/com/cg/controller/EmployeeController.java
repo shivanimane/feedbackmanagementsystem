@@ -1,5 +1,7 @@
 package com.cg.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,6 +44,13 @@ public class EmployeeController {
 		return this.service.checkRole(empId);
 		
 	}
+	
+	
+	@GetMapping("/getAllParticipantList")
+	public List<Employee> getAllParticipantList() {
+		return this.service.getAllParticipant();
+	}
+
 	
 
 }
