@@ -1,7 +1,9 @@
-export class participantEnrolledModel{
+import { TrainingProgramModel } from "./trainingprogram.model";
+
+export class ParticipantEnrolledModel{
 
     participantId : number ;
     participantName : String ;
-    trainingCode : number ;
+    trainingProgram : TrainingProgramModel ;
 
 }

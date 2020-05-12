@@ -11,6 +11,6 @@ Employee : EmployeeModel[]=[];
   constructor(private http : HttpClient) { }
 
   fetchAllParticipants(){
-    return this.http.get<EmployeeModel[]>("http://localhost:5056/coordinator/getAllTrainingProgramList");
+    return this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllParticipantList");
   }
 }

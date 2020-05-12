@@ -20,7 +20,7 @@
         <td><label> Faculty Name </label></td>
         <td>
           <input name="facultyName" class="form-control" [(ngModel)]=faculty.facultyName
-            placeholder="Enter Faculty Name" required pattern="[A-Z][a-z]{1,}" #facultyName=ngModel>
+            placeholder="Enter Faculty Name" required pattern="([A-z0-9À-ž\s]){2,}" #facultyName=ngModel>
         </td>
       </tr>
       <tr>
