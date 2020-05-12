@@ -24,6 +24,7 @@ export class FeedbackService {
   }
 
   fetchFeedbackByTrainingCode(index:number){
-    return this.http.get<TrainingProgramModel>("http://localhost:5054/feedback/forEachTrainingProgram/{trainingCode}");
+    return this.http.get<TrainingProgramModel>("http://localhost:5054/feedback/forEachTrainingProgram/"+index);
   }
+  //("http://localhost:5054/feedback/forEachTrainingProgram/"+empId+"/"+assetId+"/"+quantity);
 }

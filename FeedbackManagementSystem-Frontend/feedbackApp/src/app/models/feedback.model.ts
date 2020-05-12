@@ -1,8 +1,9 @@
 
 export class FeedbackModel{
     feedbackId : number;
-    participantId : number;
     trainingCode : number ;
+    participantId : string;
+    facultyId : number;
     fbPrsComm : number;
     fbClrfyDbts : number;
     fbTm : number;
@@ -10,5 +11,5 @@ export class FeedbackModel{
     fbHwSwNtwrk : number;
     comments : String;
     suggestions : String;
-    feedbackDate : Date;
+    feedbackDate : string;
 } 

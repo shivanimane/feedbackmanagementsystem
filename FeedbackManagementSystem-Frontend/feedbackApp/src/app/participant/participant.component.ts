@@ -34,8 +34,8 @@ export class ParticipantComponent implements OnInit {
 
   }
 
-  generateFeedBack(trainingId : number){
-    this.route.navigate(['add-feedback',trainingId]);
+  generateFeedBack(trainingId : number,facultyId:number){
+    this.route.navigate(['add-feedback',trainingId,facultyId]);
   }
 
 }
