@@ -33,6 +33,9 @@ public class TrainingProgram {
 
 	@Column(name = "FACULTY_NAME")
 	private String facultyName ;
+	
+	@Column(name = "FACULTY_ID")
+	private Integer facultyId;
 
 	@Temporal(value = TemporalType.DATE)
 	@Column(name = "START_DATE")
@@ -46,6 +49,14 @@ public class TrainingProgram {
 
 	public Integer getTrainingCode() {
 		return trainingCode;
+	}
+
+	public Integer getFacultyId() {
+		return facultyId;
+	}
+
+	public void setFacultyId(Integer facultyId) {
+		this.facultyId = facultyId;
 	}
 
 	public void setTrainingCode(Integer trainingCode) {
