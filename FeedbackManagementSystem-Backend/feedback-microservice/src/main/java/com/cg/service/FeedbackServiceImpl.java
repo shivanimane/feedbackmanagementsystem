@@ -21,6 +21,8 @@ import com.cg.dao.FeedbackDao;
  */
 @Service
 public class FeedbackServiceImpl implements FeedbackService{
+	
+	
 
 	@Autowired
 	FeedbackDao feedbackDao;
@@ -35,14 +37,17 @@ public class FeedbackServiceImpl implements FeedbackService{
 		return this.feedbackDao.findAll();
 	}
 
+	//Needs to be corrected
+	
 	@Override
-	public List<Feedback> getFeedbackByFacultyId(Integer facultyId) {
-		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getFaculty().getFacultyId()==facultyId).collect(Collectors.toList());
+	public Feedback getFeedbackByFacultyId(Integer facultyId) {
+		//return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getFaculty().getFacultyId()==facultyId).findFirst().get();
+		return null;
 	}
 
 	@Override
-	public List<Feedback> getFeedbackByTrainingProgram(Integer trainingCode) {
-		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getTrainingCode()==trainingCode).collect(Collectors.toList());
+	public Feedback getFeedbackByTrainingProgram(Integer trainingCode) {
+		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getTrainingCode()==trainingCode).findFirst().get();
 	}
 
 }

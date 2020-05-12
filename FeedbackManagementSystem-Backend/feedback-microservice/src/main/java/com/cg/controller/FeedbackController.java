@@ -50,14 +50,14 @@ public class FeedbackController {
 	}
 	
 	//localhost:5053/feedback/forEachFaculty/{facultyId}
-	@GetMapping("forEachFaculty/{facultyId}")
-	public List<Feedback> getFeedbackByFacultyId(@PathVariable Integer facultyId){
+	@GetMapping("/forEachFaculty/{facultyId}")
+	public Feedback getFeedbackByFacultyId(@PathVariable Integer facultyId){
 		return feedbackService.getFeedbackByFacultyId(facultyId);
 	}
 	
 	//localhost:5053/feedback/forEachTrainingProgram/{trainingCode}
-	@GetMapping("forEachTrainingProgram/{trainingCode}")
-	public List<Feedback> getFeedbackByTrainingCode(@PathVariable Integer trainingCode){
+	@GetMapping("/forEachTrainingProgram/{trainingCode}")
+	public Feedback getFeedbackByTrainingCode(@PathVariable Integer trainingCode){
 		return feedbackService.getFeedbackByTrainingProgram(trainingCode);
 	}
 	

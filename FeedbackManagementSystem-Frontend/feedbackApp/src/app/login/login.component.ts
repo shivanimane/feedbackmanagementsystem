@@ -26,22 +26,26 @@ export class LoginComponent implements OnInit {
   checkRole(emp : EmployeeModel){
     
     localStorage.setItem('user',this.employee.employeeId);
+    console.log(emp.role);
     if(emp.role=="admin"){
       this.route.navigate(['admin']);
     }else if(emp.role=="coordinator"){
-      this.route.navigate(['coordinator'])
+      this.route.navigate(['coordinator']);
     }else{
-      this.route.navigate(['participant'])
+      this.route.navigate(['participant']);
     }
   }
   
  
   checkLogin(){
     console.log(this.login);
-    this.loginservice.getEmployee(this.login).subscribe(data => {
-      this.employee = data;
-      this.checkRole(this.employee);
-    });
+    this.loginservice.getEmployee(this.login).subscribe(data =>{
+        this.employee = data;
+        this.checkRole(this.employee);
+      });
+    } 
+
+   
   }
 
 }

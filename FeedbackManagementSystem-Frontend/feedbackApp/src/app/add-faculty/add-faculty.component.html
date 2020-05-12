@@ -1,10 +1,17 @@
-<table>
+
+<div class="text-right">
+  <nav>
+    <button (click)="redirectToAdmin()">Back to Admin</button>
+  </nav>
+</div>
+<table class="table table-striped">
   <label>Select Skills </label>
   <tr *ngFor="let s of selectedSkills;let i=index">
     <td>{{s}}</td>
     <td><button class="btn btn-warning" (click)="add(i)">add</button></td>
   </tr>
 </table>
+
 
 <form (ngSubmit)="saveFaculty(); addFacultyForm.reset()" #addFacultyForm=ngForm>
   <div>

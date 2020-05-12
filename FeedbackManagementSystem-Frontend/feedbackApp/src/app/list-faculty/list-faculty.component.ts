@@ -28,4 +28,8 @@ export class ListFacultyComponent implements OnInit {
     
       this.route.navigate(['list-feedback-faculty',index]);
   }
+
+  redirectToAdmin(){
+    this.route.navigate(['admin']);
+  }
 }

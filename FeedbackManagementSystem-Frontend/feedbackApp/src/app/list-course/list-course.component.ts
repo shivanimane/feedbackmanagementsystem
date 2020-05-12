@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseModel } from '../models/course.model';
 import { CourseService } from '../service/course.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-course',
@@ -10,7 +11,8 @@ import { CourseService } from '../service/course.service';
 export class ListCourseComponent implements OnInit {
 
   courses: CourseModel[] =[];
-  constructor(private service: CourseService) {
+  constructor(private service: CourseService,
+    private route: Router) {
    }
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class ListCourseComponent implements OnInit {
          console.log(this.courses);
       });
     }
+  }
+
+  redirectToAdmin(){
+    this.route.navigate(['admin']);
   }
 
 }
