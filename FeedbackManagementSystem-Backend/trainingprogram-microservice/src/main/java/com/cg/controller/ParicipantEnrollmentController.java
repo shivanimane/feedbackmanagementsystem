@@ -58,5 +58,11 @@ public class ParicipantEnrollmentController {
 
 		return pe;
 	}
+	// http://localhost:5056/coordinator/participantenroll/gettrainingprogram/
+	@RequestMapping("/participantenroll/gettrainingprogram/{empId}")
+	private TrainingProgram getTrainingProgramByParticipantId(@PathVariable(value = "empId") Integer empId) {
+		return trainingProgramMaintainance.getTrainingProgramByParticipantId(empId);
+	}
+	
 
 }

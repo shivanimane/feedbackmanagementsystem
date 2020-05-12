@@ -22,5 +22,6 @@ public interface TrainingProgramMaintainance {
 	Boolean deleteTrainingProgram(Integer trainingCode);
 	TrainingProgram isTrainingProgram(Integer trainingCode); 
 	ParticipantEnrolled enrollParticipant(Employee employee , TrainingProgram tp);
-
+	TrainingProgram getTrainingProgramByParticipantId(Integer participantId);
+	
 }

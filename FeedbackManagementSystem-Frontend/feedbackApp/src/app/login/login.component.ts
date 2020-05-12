@@ -31,8 +31,10 @@ export class LoginComponent implements OnInit {
       this.route.navigate(['admin']);
     }else if(emp.role=="coordinator"){
       this.route.navigate(['coordinator']);
-    }else{
+    }else if(emp.role=="participant"){
       this.route.navigate(['participant']);
+    }else{
+      alert("You are not registered!")
     }
   }
   

@@ -30,9 +30,10 @@ const routes : Routes = [
   {path:'add-faculty', component:AddFacultyComponent},
   {path:'list-faculty', component:ListFacultyComponent},
   {path:'coordinator', component:CoordinatorComponent},
-  {path:'add-feedback', component:AddFeedbackComponent},
+  {path:'add-feedback/:id', component:AddFeedbackComponent},
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
+  {path:'participant', component:ParticipantComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}

@@ -70,6 +70,17 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		partEnrolled.setTrainingprogram(tp);
 		return participantEnrolledDao.save(partEnrolled);
 	}
+
+	@Override
+	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
+		List<ParticipantEnrolled> enrollmentList = participantEnrolledDao.findAll();
+		for (int i = 0; i < enrollmentList.size(); i++) {
+			if(enrollmentList.get(i).getPartEnrollNo()==participantId) {
+				return enrollmentList.get(i).getTrainingprogram();
+			}
+		}
+		return null;
+	}
 	
 	
 	
