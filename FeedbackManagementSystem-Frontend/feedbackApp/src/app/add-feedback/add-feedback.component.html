@@ -1,5 +1,5 @@
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
-
+<form (ngSubmit)="onSubmit(form);" #form="ngForm">
+<h5>Give Feedback for :</h5>
   <!-- <div class="col">
     <div class="form-group">
       <label for="name">Training Program</label>
@@ -25,8 +25,10 @@
   <!--Presentation and Communication -->
   <div class="col">
     <div class="form-group">
-      <label>Feedback for Presentation and Communication Skills</label>
-      <!-- <bar-rating name="fbPrsComm" [max]="5" [theme]="'stars'" required ngModel name="fbPrsComm" #fbPrsComm="ngModel">
+      <label>Presentation and Communication Skills</label>&nbsp;
+      <!-- <bar-rating name="fbPrsComm" [max]="5" [theme]="'stars'" required 
+        [(ngModel)]=feedback.fbPrsComm 
+        #fbPrsComm=ngModel>
       </bar-rating> -->
     <input name="fbPrsComm" type="number" min="1" max="5" required 
         [(ngModel)]=feedback.fbPrsComm 
@@ -38,7 +40,7 @@
   <!--Ability to Clarify Doubts -->
   <div class="col">
     <div class="form-group">
-      <label>Feedback for Ability to Clarify Doubts</label>
+      <label>Ability to Clarify Doubts</label>&nbsp;
       <!-- <bar-rating name="fbClrfyDbts" [max]="5" [theme]="'stars'" required ngModel name="fbClrfyDbts"
         #fbClrfyDbts="ngModel"></bar-rating> -->
         <input name="fbClrfyDbts" type="number" min="1" max="5" required 
@@ -51,7 +53,7 @@
   <!--Time Management Skills -->
   <div class="col">
     <div class="form-group">
-      <label>Feedback for Time Management Skills</label>
+      <label>Time Management Skills</label>&nbsp;
       <!-- <bar-rating name="fbTm" [max]="5" [theme]="'stars'" required name="fbTm" ngModel #fbTm="ngModel"></bar-rating> -->
       <input name="fbTm" type="number" min="1" max="5" required 
           [(ngModel)]=feedback.fbTm 
@@ -63,7 +65,7 @@
   <!--Providing Handouts and other material -->
   <div class="col">
     <div class="form-group">
-      <label>Feedback for Providing Handouts and other material</label>
+      <label>Providing Handouts and other material</label>&nbsp;
       <!-- <bar-rating name="fbHndOut" [max]="5" [theme]="'stars'" required name="fbHndOut" ngModel #fbHndOut="ngModel">
       </bar-rating> -->
       <input name="fbHndOut" type="number" min="1" max="5" required 
@@ -76,7 +78,7 @@
   <!--Hardware, Software and Network Ability -->
   <div class="col">
     <div class="form-group">
-      <label>Feedback for Hardware, Software and Network Ability</label>
+      <label>Hardware, Software and Network Availabilty</label>&nbsp;
       <!-- <bar-rating [(rate)]="rate" [max]="5" [theme]="'stars'" required name="fbHwSwNtwrk" ngModel
         #fbHwSwNtwrk="ngModel"></bar-rating> -->
         <input name="fbHwSwNtwrk" type="number" min="1" max="5" required 
@@ -88,7 +90,8 @@
 
   <div class="col">
     <div class="form-group">
-      <label for="name">Comments</label>
+      <!-- <label for="name">Comments</label> -->
+      <h5>Comments</h5>
       <input name="comments" placeholder="Comments.." 
       [(ngModel)]=feedback.comments 
            #comments=ngModel 
@@ -98,7 +101,8 @@
 
   <div class="col">
     <div class="form-group">
-      <label>Suggestions</label>
+      <!-- <label>Suggestions</label> -->
+      <h5>Suggestions</h5>
       <input name="suggestions" placeholder="Suggestions.." 
       [(ngModel)]=feedback.suggestions 
            #suggestions=ngModel 

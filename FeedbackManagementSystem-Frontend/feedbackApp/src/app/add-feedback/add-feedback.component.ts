@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedbackModel } from '../models/feedback.model';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { formatDate } from '@angular/common';
 import { FeedbackService } from '../service/feedback.service';
@@ -17,7 +17,8 @@ export class AddFeedbackComponent implements OnInit {
   
   
   constructor(private route : ActivatedRoute,
-                private service: FeedbackService) { 
+                private service: FeedbackService,
+                private router: Router) { 
                // this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
                console.log(formatDate(new Date(),'yyyy/MM/dd', 'en'));
               }
@@ -34,8 +35,9 @@ export class AddFeedbackComponent implements OnInit {
     this.feedback.feedbackDate=formatDate(new Date(),'yyyy-MM-dd', 'en');
     this.service.addFeedback(this.feedback).subscribe(response=>{
       console.log(this.feedback);
+      alert("Feedback Succesfully Submitted");
+      this.router.navigate(['participant']);
     });
-
   }
 
 }
