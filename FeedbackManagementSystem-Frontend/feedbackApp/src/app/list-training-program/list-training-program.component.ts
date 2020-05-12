@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingProgramModel } from '../models/trainingprogram.model';
 import { TrainingProgramService } from '../service/training-program.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-training-program',
@@ -9,7 +10,8 @@ import { TrainingProgramService } from '../service/training-program.service';
 })
 export class ListTrainingProgramComponent implements OnInit {
   trainingList: TrainingProgramModel[] = [];
-  constructor(private service: TrainingProgramService) { }
+  constructor(private service: TrainingProgramService,
+              private route:Router) { }
 
   ngOnInit() {
     setTimeout(() => { this.reloadData() }, 100);
@@ -28,6 +30,10 @@ export class ListTrainingProgramComponent implements OnInit {
     this.reloadData();
   },
      error => console.log(error));
+  }
+
+  showFeedback(tId:number){
+    this.route.navigate(['list-feedback-training-program',tId]);
   }
 
 }

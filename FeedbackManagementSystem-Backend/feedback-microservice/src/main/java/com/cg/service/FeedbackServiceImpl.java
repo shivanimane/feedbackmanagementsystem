@@ -39,20 +39,13 @@ public class FeedbackServiceImpl implements FeedbackService{
 	
 	@Override
 	public Feedback getFeedbackByFacultyId(Integer facultyId) {
-		//return this.feedbackDao.findAll().stream().filter(f->f.==facultyId).findFirst().get();
-//		String urll = "http://localhost:5053/faculty/getFacultyById/";
-//		Faculty faculty = restTemplate.getForObject(urll+facultyId, Faculty.class);
-//		
-		
-		//TrainingProgram tp = restTemplate.getForObject(url, responseType)
-		//return
-		return null;
+		return this.feedbackDao.findAll().stream().filter(f->f.getFacultyId()==facultyId).findFirst().get();
 	}
 
 	@Override
 	public Feedback getFeedbackByTrainingProgram(Integer trainingCode) {
-		//return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode().getTrainingCode()==trainingCode).findFirst().get();
-		return null;
+		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode()==trainingCode).findFirst().get();
+		
 	}
 
 }

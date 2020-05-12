@@ -20,6 +20,7 @@ import { ListTrainingProgramComponent } from './list-training-program/list-train
 import { ListFeedbackFacultyComponent } from './list-feedback-faculty/list-feedback-faculty.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ParticipantComponent } from './participant/participant.component';
+import { ListFeedbackTrainingProgramComponent } from './list-feedback-training-program/list-feedback-training-program.component';
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -35,6 +36,7 @@ const routes : Routes = [
   {path:'list-training',component:ListTrainingProgramComponent},
   {path:'participant', component:ParticipantComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
+  {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
@@ -55,7 +57,8 @@ const routes : Routes = [
     ListTrainingProgramComponent,
     ListFeedbackFacultyComponent,
     AddEmployeeComponent,
-    ParticipantComponent
+    ParticipantComponent,
+    ListFeedbackTrainingProgramComponent
   ],
   imports: [
     BrowserModule,

@@ -13,16 +13,16 @@ export class LoginService {
 
   constructor(public http : HttpClient) {
     
-    this.http.get<Login[]>("../assets/login.json")
-    .subscribe(data =>{
-      this.loginList = data;
-    });
+    // this.http.get<Login[]>("../assets/login.json")
+    // .subscribe(data =>{
+    //   this.loginList = data;
+    // });
    }
 
-   fetchLoginList():Login[]{
-     console.log(this.loginList);
-    return this.loginList;
-   }
+  //  fetchLoginList():Login[]{
+  //    console.log(this.loginList);
+  //   return this.loginList;
+  //  }
 
    getEmployee(login : Login){
      console.log(login);

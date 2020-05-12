@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { FacultyModel } from '../models/faculty.model';
 import { HttpClient } from '@angular/common/http';
+import { SkillsModel } from '../models/skills.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacultyService {
   faculties : FacultyModel[] = [];
+  //skillsList :String[]=[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    // this.http.get<String[]>("../assets/skills.json").subscribe(data=>{
+    //   this.skillsList =data;
+    // });
+  }
+
+  // fetchSkillList():String[]{
+  //   return this.skillsList;
+  // }
 
    //Add Faculty
    addFaculty(faculty : FacultyModel){

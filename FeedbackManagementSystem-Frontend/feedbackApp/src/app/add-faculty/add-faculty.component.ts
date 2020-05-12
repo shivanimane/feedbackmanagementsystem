@@ -26,7 +26,7 @@ export class AddFacultyComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.selectedSkills=["Java","AWS","C++"];
+    this.selectedSkills=["Java","AWS","C++","DevOps","RDBMS","GitHub","Spring 5","Microservice","AWS"];
   }
 
  
