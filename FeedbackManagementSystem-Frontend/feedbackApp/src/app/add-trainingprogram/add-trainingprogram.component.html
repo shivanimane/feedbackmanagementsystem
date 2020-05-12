@@ -1,36 +1,42 @@
 <div>
 
-  <table class="table table-striped">
-    <tr>
-      <th>Course Id </th>
-      <th>Course Name </th>
-      <th>No of Days</th>
-      <th>Add Course</th>
-      
+  <div>
+    <h3 style="text-align: center;">Course Table</h3>
+    <table class="table table-striped">
+      <tr>
+        <th>Course Id </th>
+        <th>Course Name </th>
+        <th>No of Days</th>
+        <th>Add Course</th>
+        
+      </tr>
+      <tr *ngFor="let c of courses; let i =index">
+      <td>{{c.courseId}}</td>
+      <td>{{c.courseName}}</td>
+      <td>{{c.noOfDays}}</td>
+      <td><button class="btn btn-success" (click)="addCourse(c.courseId)">Add</button></td>
     </tr>
-    <tr *ngFor="let c of courses; let i =index">
-    <td>{{c.courseId}}</td>
-    <td>{{c.courseName}}</td>
-    <td>{{c.noOfDays}}</td>
-    <td><button class="btn btn-warning" (click)="addCourse(c.courseId)">Add</button></td>
-  </tr>
-  </table>
+    </table>
+  </div>
   
-  <table class="table table-striped">
-    <tr>
-      <th>Faculty Id </th>
-      <th>Faculty Name </th>
-      <th>Skills</th>
-      <th>Add Faculty</th>
-      
+  <div>
+    <h3 style="text-align: center;">Faculty Table</h3>
+    <table class="table table-striped">
+      <tr>
+        <th>Faculty Id </th>
+        <th>Faculty Name </th>
+        <th>Skills</th>
+        <th>Add Faculty</th>
+        
+      </tr>
+      <tr *ngFor="let f of faculty; let i =index">
+      <td>{{f.facultyId}}</td>
+      <td>{{f.facultyName}}</td>
+      <td>{{f.skills}}</td>
+      <td><button class="btn btn-success" (click)="addFaculty(f.facultyId)">Add</button></td>
     </tr>
-    <tr *ngFor="let f of faculty; let i =index">
-    <td>{{f.facultyId}}</td>
-    <td>{{f.facultyName}}</td>
-    <td>{{f.skills}}</td>
-    <td><button class="btn btn-warning" (click)="addFaculty(f.facultyId)">Add</button></td>
-  </tr>
-  </table>
+    </table>
+  </div>
   
   <form (ngSubmit)="savetrainingProgram()" #addtrainingForm=ngForm>
     <div>

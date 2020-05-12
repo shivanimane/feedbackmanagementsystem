@@ -21,14 +21,6 @@ export class ListTrainingProgramComponent implements OnInit {
     })   
   }
 
- /*  remove(index: number) {
-    var ans = confirm("Are you sure you want to delete?");
-    if (ans) {
-      this.service.deletetrainingProgram(index).subscribe(response => {
-        console.log(this.trainingList);
-      });
-    }
-  } */
 
   deleteTraining(id:number){
     this.service.deletetrainingProgram(id)

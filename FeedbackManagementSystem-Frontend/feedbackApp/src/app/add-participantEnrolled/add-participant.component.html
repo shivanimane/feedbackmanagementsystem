@@ -1,0 +1,25 @@
+<div>
+  <h3 style="text-align: center;">Training Program Table</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Course Name </th>
+      <th>Faculty Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Action</th>
+      
+    </tr>
+    <tr *ngFor="let c of trainingList">
+    <td>{{c.courseName}}</td>
+    <td>{{c.facultyName}}</td>
+    <td>{{c.startDate}}</td>
+    <td>{{c.endDate}}</td>
+    
+    <td><button class="btn btn-warning" (click)="addTraining(c.trainingCode)">Add</button></td>
+  </tr>
+  </table>
+</div>
+
+<div>
+  <h3 style="text-align: center;">Employee Table</h3>
+</div>

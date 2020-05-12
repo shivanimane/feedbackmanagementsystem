@@ -17,8 +17,12 @@ export class CoordinatorComponent implements OnInit {
     this.route.navigate(['add-training']);
   }
 
-  clickOnListTrainingProgram(){
+  clickOfListTrainingProgram(){
     this.route.navigate(['list-training']);
+  }
+
+  clickOnAddParticipantEnrolled(){
+    this.route.navigate(['add-participant']);
   }
 
   
