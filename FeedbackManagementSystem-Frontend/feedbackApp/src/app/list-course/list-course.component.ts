@@ -16,16 +16,27 @@ export class ListCourseComponent implements OnInit {
    }
 
   ngOnInit() {
+    
+    setTimeout(() => { this.reloadData() }, 100);
+  }
+
+
+  reloadData() {
     this.service.fetchAllCourses().subscribe(data => {
       this.courses =data;
       console.log(this.courses);
     });
   }
+
+
+
+
   remove(index: number){
     var ans =confirm("Are you sure you want to delete?");
     if(ans){
       this.service.deleteCourse(index).subscribe(response=>{
          console.log(this.courses);
+         this.reloadData();
       });
     }
   }

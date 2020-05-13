@@ -24,6 +24,7 @@ public interface TrainingProgramMaintainance {
 	ParticipantEnrolled enrollParticipant(Employee employee , TrainingProgram tp);
 	TrainingProgram getTrainingProgramByParticipantId(Integer participantId);
 	List<ParticipantEnrolled> getAllParticipantEnrolled();
+	void deleteAllEnrolledParticipant(Integer trainingCode);
 	
 	
 }

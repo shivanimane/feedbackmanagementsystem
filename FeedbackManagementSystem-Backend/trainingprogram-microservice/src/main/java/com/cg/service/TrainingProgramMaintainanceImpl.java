@@ -17,17 +17,16 @@ import com.cg.dao.TrainingProgramRepository;
 /**
  * @author Uma Shankar
  *
- * 04-May-2020 3:07:02 pm
+ *         04-May-2020 3:07:02 pm
  */
 @Service
 public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintainance {
-	
-	
+
 	@Autowired
-	TrainingProgramRepository trainingProgramDao ;
-	
+	TrainingProgramRepository trainingProgramDao;
+
 	@Autowired
-	ParticipantEnrolledRepository participantEnrolledDao ;
+	ParticipantEnrolledRepository participantEnrolledDao;
 
 	@Override
 	public List<TrainingProgram> getAllTrainingProgram() {
@@ -36,16 +35,15 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 
 	@Override
 	public TrainingProgram getTrainingProgramById(Integer trainingCode) {
-	System.out.println("Training code value from user"+ trainingCode);
+		System.out.println("Training code value from user" + trainingCode);
 		return this.trainingProgramDao.findById(trainingCode).get();
-		
-		
+
 	}
 
 	@Override
 	public TrainingProgram addTrainingProgram(TrainingProgram trainingProgram) {
 		return this.trainingProgramDao.save(trainingProgram);
-		
+
 	}
 
 	@Override
@@ -57,8 +55,8 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	@Override
 	public TrainingProgram isTrainingProgram(Integer trainingCode) {
 		List<TrainingProgram> trainingProgramList = this.trainingProgramDao.findAll();
-		for(int i=0;i<=trainingProgramList.size();i++) {
-			if(trainingProgramList.get(i).getTrainingCode()==trainingCode)
+		for (int i = 0; i <= trainingProgramList.size(); i++) {
+			if (trainingProgramList.get(i).getTrainingCode() == trainingCode)
 				return trainingProgramList.get(i);
 		}
 		return null;
@@ -69,28 +67,26 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		ParticipantEnrolled partEnrolled = new ParticipantEnrolled();
 		partEnrolled.setParticipantId(employee.getEmployeeId());
 		partEnrolled.setParticipantName(employee.getEmployeeName());
-		partEnrolled.setTrainingprogram(tp);
-	    return participantEnrolledDao.save(partEnrolled);
-		
-//		ParticipantEnrolledDummy partDummy = new ParticipantEnrolledDummy();
-//		partDummy.setParticipantId(employee.getEmployeeId());
-//		partDummy.setParticipantName(employee.getEmployeeName());
-//		partDummy.setTrainingCode(tp.getTrainingCode());
-//		//return partDummy ;
-	    
-		
+		partEnrolled.setTrainingCode(tp.getTrainingCode());
+		partEnrolled.setCourseName(tp.getCourseName());
+		partEnrolled.setFacultyName(tp.getFacultyName());
+		return participantEnrolledDao.save(partEnrolled);
+
 	}
 
-	// CHANGES NEEDED HERE
+	// CHANGES NEEDED HERE ---- DONE AK BAAR CHECK KAR LO
 	@Override
 	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
+		Integer trainingCode = 0;
 		List<ParticipantEnrolled> enrollmentList = participantEnrolledDao.findAll();
 		for (int i = 0; i < enrollmentList.size(); i++) {
-			if(enrollmentList.get(i).getParticipantId()==participantId) {
-				return enrollmentList.get(i).getTrainingprogram();
+			if (enrollmentList.get(i).getParticipantId() == participantId) {
+				trainingCode = enrollmentList.get(i).getTrainingCode();
 			}
+
 		}
-		return null;
+		return this.trainingProgramDao.findById(trainingCode).get();
+
 	}
 
 	@Override
@@ -98,9 +94,10 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		return this.participantEnrolledDao.findAll();
 	}
 
-	
-	
-	
+	@Override
+	public void deleteAllEnrolledParticipant(Integer trainingCode) {
+		this.participantEnrolledDao.deleteBytrainingCode(trainingCode);
+		
+	}
 
-	
 }

@@ -1,16 +1,12 @@
 
 package com.cg.bean;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+
 
 /**
  * @author Uma Shankar
@@ -33,10 +29,15 @@ public class ParticipantEnrolled implements java.io.Serializable {
 	@Column(name = "PARTICIPANT_NAME")
 	private String participantName;
 
-	@ManyToOne( cascade=CascadeType.ALL)
-	@JoinColumn(name = "TRAINING_CODE")
-	@Cascade(CascadeType.ALL)
-	private TrainingProgram trainingprogram;
+	
+	@Column(name = "TRAINING_CODE")
+	private Integer trainingCode;
+	
+	@Column(name ="COURSE_NAME")
+	private String courseName ;
+	
+	@Column(name ="FACULTY_NAME")
+	private String facultyName ;
 
 	public Integer getParticipantId() {
 		return participantId;
@@ -54,20 +55,29 @@ public class ParticipantEnrolled implements java.io.Serializable {
 		this.participantName = participantName;
 	}
 
-	public TrainingProgram getTrainingprogram() {
-		return trainingprogram;
+	public Integer getTrainingCode() {
+		return trainingCode;
 	}
 
-	public void setTrainingprogram(TrainingProgram trainingprogram) {
-		this.trainingprogram = trainingprogram;
+	public void setTrainingCode(Integer trainingCode) {
+		this.trainingCode = trainingCode;
 	}
 
-	@Override
-	public String toString() {
-		return "ParticipantEnrolled [participantId=" + participantId + ", participantName=" + participantName
-				+ ", trainingprogram=" + trainingprogram + "]";
+	public String getCourseName() {
+		return courseName;
 	}
-	
-	
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public String getFacultyName() {
+		return facultyName;
+	}
+
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
+	}
+		
 
 }
