@@ -84,7 +84,6 @@ public class TrainingProgramController {
 	//http://localhost:5056/coordinator/deleteTrainingProgram/{id}
 	@DeleteMapping("/coordinator/deleteTrainingProgram/{id}")
 	public Boolean deleteCourse(@PathVariable(value = "id") Integer trainingCode) {
-
 	   return this.trainingProgramMaintainance.deleteTrainingProgram(trainingCode);
 	}
 	

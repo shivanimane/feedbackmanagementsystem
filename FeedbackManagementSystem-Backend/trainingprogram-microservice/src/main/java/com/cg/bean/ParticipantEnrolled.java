@@ -1,6 +1,7 @@
 
 package com.cg.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +16,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PARTICIPANT_ENROLLED")
-public class ParticipantEnrolled {
+public class ParticipantEnrolled implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5683547266894696823L;
 
 	@Id
 	@Column(name = "PARTICIPANT_ID")
@@ -24,7 +30,7 @@ public class ParticipantEnrolled {
 	@Column(name = "PARTICIPANT_NAME")
 	private String participantName;
 
-	@ManyToOne
+	@ManyToOne( cascade=CascadeType.ALL)
 	@JoinColumn(name = "TRAINING_CODE")
 	private TrainingProgram trainingprogram;
 

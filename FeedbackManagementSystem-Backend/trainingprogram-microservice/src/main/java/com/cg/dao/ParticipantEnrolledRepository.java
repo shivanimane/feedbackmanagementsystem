@@ -12,4 +12,6 @@ import com.cg.bean.ParticipantEnrolled;
  */
 public interface ParticipantEnrolledRepository extends JpaRepository<ParticipantEnrolled, Integer> {
 
+	
+
 }

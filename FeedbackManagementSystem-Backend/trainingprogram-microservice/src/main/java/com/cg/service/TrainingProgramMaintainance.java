@@ -25,4 +25,5 @@ public interface TrainingProgramMaintainance {
 	TrainingProgram getTrainingProgramByParticipantId(Integer participantId);
 	List<ParticipantEnrolled> getAllParticipantEnrolled();
 	
+	
 }

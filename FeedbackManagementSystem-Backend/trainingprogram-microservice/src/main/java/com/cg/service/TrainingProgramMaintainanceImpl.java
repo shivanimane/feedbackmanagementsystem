@@ -96,6 +96,7 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	public List<ParticipantEnrolled> getAllParticipantEnrolled() {
 		return this.participantEnrolledDao.findAll();
 	}
+
 	
 	
 	

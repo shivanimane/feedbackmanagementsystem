@@ -44,7 +44,7 @@
     </table>
   </div>
   
-  <form (ngSubmit)="savetrainingProgram()" #addtrainingForm=ngForm>
+  <form (ngSubmit)="savetrainingProgram(ngForm)" #addtrainingForm=ngForm>
     <div>
       <table>
        <tr>
@@ -58,7 +58,7 @@
           <td><h5>Enter End Date</h5></td>
           <td>
             <input type="date" name="end Date" class="form-control" [(ngModel)]="trainingProgramDate.endDate"
-              placeholder="Enter end Date"  #enddate="ngModel">
+              placeholder="Enter end Date"  #enddate="ngModel" required min="{{addtrainingForm.value.startdate}}">
           </td>
         </tr>
       </table>
