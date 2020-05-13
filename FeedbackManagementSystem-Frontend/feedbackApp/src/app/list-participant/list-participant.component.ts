@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ParticipantEnrolledModel} from '../models/participantEnrolled.model'
+import {EnrollService} from '../service/enroll.service';
 
 @Component({
   selector: 'app-list-participant',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-participant.component.css']
 })
 export class ListParticipantComponent implements OnInit {
+enrolledList : ParticipantEnrolledModel[]=[];
 
-  constructor() { }
+  constructor(private enrolledService : EnrollService ) { }
 
   ngOnInit() {
+    setTimeout(() => { this.reloadData() }, 100);
+  }
+
+  reloadData() {
+    this.enrolledService.fetchAllParticipantEnrolled().subscribe(data =>
+       {this.enrolledList=data ;
+      console.log(this.enrolledList)})
+    
   }
 
 }

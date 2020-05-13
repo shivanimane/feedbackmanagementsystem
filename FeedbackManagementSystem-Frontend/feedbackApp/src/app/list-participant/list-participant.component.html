@@ -1,3 +1,14 @@
-<p>
-  list-participant works!
-</p>
+<table class="table table-striped">
+  <tr>
+    <th>Participant Id</th>
+    <th>Participant Name</th>
+    <th>Training Code</th>
+    
+    
+  </tr>
+  <tr *ngFor="let c of enrolledList">
+  <td>{{c.participantId}}</td>
+  <td>{{c.participantName}}</td>
+  <td>{{c.trainingProgram}}</td>
+</tr>
+</table>

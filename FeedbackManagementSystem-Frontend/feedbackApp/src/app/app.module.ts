@@ -22,9 +22,13 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ParticipantComponent } from './participant/participant.component';
 import { ListFeedbackTrainingProgramComponent } from './list-feedback-training-program/list-feedback-training-program.component';
 import { ListParticipantComponent } from './list-participant/list-participant.component';
+<<<<<<< HEAD
+import { AddParticipantComponent } from './add-participant/add-participant.component';
+=======
 import { ErrorComponent } from './error/error.component';
 import { GlobalErrorService } from './service/global-error.service';
 
+>>>>>>> 295b5338e008a75c6744056e52b9bfdca98cfb98
 
 const routes : Routes = [
   {path:'login', component:LoginComponent},
@@ -38,10 +42,16 @@ const routes : Routes = [
   {path:'add-feedback/:tId/:fId', component:AddFeedbackComponent},
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
+<<<<<<< HEAD
+  {path:'list-participant', component:ListParticipantComponent},
+  {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
+  {path:'add-participant' , component:AddParticipantComponent},
+=======
   {path:'participant', component:ParticipantComponent},
   {path:'error/:errMsg', component:ErrorComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
+>>>>>>> 295b5338e008a75c6744056e52b9bfdca98cfb98
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
@@ -63,9 +73,14 @@ const routes : Routes = [
     ListFeedbackFacultyComponent,
     AddEmployeeComponent,
     ParticipantComponent,
+<<<<<<< HEAD
+    ListParticipantComponent,
+    AddParticipantComponent
+=======
     ListFeedbackTrainingProgramComponent,
     ListParticipantComponent,
     ErrorComponent
+>>>>>>> 295b5338e008a75c6744056e52b9bfdca98cfb98
   ],
   imports: [
     BrowserModule,

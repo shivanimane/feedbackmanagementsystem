@@ -1,0 +1,45 @@
+
+<div>
+  <h3 style="text-align: center;">Training Program Table</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Course Name </th>
+      <th>Faculty Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Action</th>
+      
+    </tr>
+    <tr *ngFor="let c of trainingList">
+    <td>{{c.courseName}}</td>
+    <td>{{c.facultyName}}</td>
+    <td>{{c.startDate}}</td>
+    <td>{{c.endDate}}</td>
+    
+    <td><button class="btn btn-success" (click)="addTraining(c.trainingCode)">Add Training Program</button></td>
+  </tr>
+  </table>
+</div>
+
+<div>
+  <h3 style="text-align:center ;">Participant Table</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>Participant Name </th>
+      <th>Role</th>
+      <th>Action</th>
+      
+    </tr>
+    <tr *ngFor="let c of employeeList">
+    <td>{{c.employeeName}}</td>
+    <td>{{c.role}}</td>
+    <td><button class="btn btn-success" (click)="addparticipant(c.employeeId)">Add Participant</button></td>
+  </tr>
+  </table>
+</div>
+
+<form (ngSubmit)="enrollParticipant()" #addtrainingForm=ngForm>
+  <div>
+    <button class="btn btn-primary" type="submit" >Enroll Participant</button>
+  </div>
+</form>

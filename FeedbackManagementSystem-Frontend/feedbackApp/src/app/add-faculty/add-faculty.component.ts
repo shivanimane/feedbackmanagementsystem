@@ -35,6 +35,7 @@ export class AddFacultyComponent implements OnInit {
     
     this.checkedSkills.push(this.selectedSkills[index]);
     this.selectedSkills.splice(index, 1); 
+    
   }
 
   saveFaculty(){

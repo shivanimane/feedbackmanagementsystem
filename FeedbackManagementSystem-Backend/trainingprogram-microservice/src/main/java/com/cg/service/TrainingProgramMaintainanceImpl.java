@@ -36,7 +36,9 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 
 	@Override
 	public TrainingProgram getTrainingProgramById(Integer trainingCode) {
+	System.out.println("Training code value from user"+ trainingCode);
 		return this.trainingProgramDao.findById(trainingCode).get();
+		
 		
 	}
 
@@ -65,21 +67,34 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	@Override
 	public ParticipantEnrolled enrollParticipant(Employee employee, TrainingProgram tp) {
 		ParticipantEnrolled partEnrolled = new ParticipantEnrolled();
-		partEnrolled.setPartEnrollNo(employee.getEmployeeId());
+		partEnrolled.setParticipantId(employee.getEmployeeId());
 		partEnrolled.setParticipantName(employee.getEmployeeName());
 		partEnrolled.setTrainingprogram(tp);
-		return participantEnrolledDao.save(partEnrolled);
+	    return participantEnrolledDao.save(partEnrolled);
+		
+//		ParticipantEnrolledDummy partDummy = new ParticipantEnrolledDummy();
+//		partDummy.setParticipantId(employee.getEmployeeId());
+//		partDummy.setParticipantName(employee.getEmployeeName());
+//		partDummy.setTrainingCode(tp.getTrainingCode());
+//		//return partDummy ;
+	    
+		
 	}
 
 	@Override
 	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
 		List<ParticipantEnrolled> enrollmentList = participantEnrolledDao.findAll();
 		for (int i = 0; i < enrollmentList.size(); i++) {
-			if(enrollmentList.get(i).getPartEnrollNo()==participantId) {
+			if(enrollmentList.get(i).getParticipantId()==participantId) {
 				return enrollmentList.get(i).getTrainingprogram();
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public List<ParticipantEnrolled> getAllParticipantEnrolled() {
+		return this.participantEnrolledDao.findAll();
 	}
 	
 	
