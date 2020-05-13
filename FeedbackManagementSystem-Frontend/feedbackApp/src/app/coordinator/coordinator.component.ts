@@ -28,7 +28,8 @@ export class CoordinatorComponent implements OnInit {
     this.route.navigate(['list-participant']);
   }
   logout(){
-    localStorage.clear();
+    //localStorage.clear();
+    sessionStorage.clear();
     this.route.navigate(['login']);
   }
   

@@ -44,5 +44,25 @@ export class ListCourseComponent implements OnInit {
   redirectToAdmin(){
     this.route.navigate(['admin']);
   }
+  clickOnAddCourse(){
+    this.route.navigate(['add-course']);
+  }
 
+  clickOnListCourse(){
+    this.route.navigate(['list-course']);
+  }
+
+  clickOnAddFaculty(){
+    this.route.navigate(['add-faculty']);
+  }
+
+  clickOnListFaculty(){
+    this.route.navigate(['list-faculty']);
+  }
+
+  logout(){
+    //localStorage.clear();
+    sessionStorage.clear();
+    this.route.navigate(['login']);
+  }
 }

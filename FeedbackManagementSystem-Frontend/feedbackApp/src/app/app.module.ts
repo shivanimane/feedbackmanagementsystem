@@ -47,7 +47,8 @@ const routes : Routes = [
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
-  {path:'*', redirectTo:'home', pathMatch:"full"}
+  {path:'*', redirectTo:'home', pathMatch:"full"},
+  //{path:'admin/add-course', component: AddCourseComponent}
 ];
 
 @NgModule({
@@ -70,7 +71,8 @@ const routes : Routes = [
     ListFeedbackTrainingProgramComponent,
     ListParticipantComponent,
     ErrorComponent,
-    AddParticipantComponent
+    AddParticipantComponent,
+    
   ],
   imports: [
     BrowserModule,

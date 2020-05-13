@@ -12,7 +12,7 @@ export class AppComponent {
   
   
   constructor(private route: Router){
-    if(localStorage.getItem('user')!=null){
+    if(sessionStorage.getItem('user')!=null){
       this.flag=true;
     }
   }

@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
       alert("Invalid Username and Password");
     }
 
-    localStorage.setItem('user',this.employee.employeeId);
+    //localStorage.setItem('user',this.employee.employeeId);
+    sessionStorage.setItem('user',this.employee.employeeId);
     console.log(emp.role);
     
     if(emp.role=="admin"){

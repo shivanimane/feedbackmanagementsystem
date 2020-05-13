@@ -17,7 +17,8 @@ export class ParticipantComponent implements OnInit {
   flag : boolean=true;
 
   constructor(private trainingservice : TrainingProgramService,private route : Router) {
-    this.participantId = localStorage.getItem('user');
+    //this.participantId = localStorage.getItem('user');
+    this.participantId = sessionStorage.getItem('user');
     this.trainingProgram = new TrainingProgramModel();
     
    }
