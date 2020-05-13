@@ -27,5 +27,9 @@ export class CoordinatorComponent implements OnInit {
   clickOfListParticipantEnrolled(){
     this.route.navigate(['list-participant']);
   }
+  logout(){
+    localStorage.clear();
+    this.route.navigate(['login']);
+  }
   
 }

@@ -29,5 +29,9 @@ export class AdminComponent implements OnInit {
   clickOnListFaculty(){
     this.route.navigate(['list-faculty']);
   }
-//ng n s service/skill
+
+  logout(){
+    localStorage.clear();
+    this.route.navigate(['login']);
+  }
 }

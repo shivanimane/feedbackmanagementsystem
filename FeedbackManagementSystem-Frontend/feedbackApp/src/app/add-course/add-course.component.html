@@ -5,17 +5,7 @@
 </div>
 <form (ngSubmit) = "saveCourse(); addCourseForm.reset()" #addCourseForm=ngForm>
   <div>
-    <table>
-      <!-- <tr>
-        <td><label> Course ID </label></td>
-        <td>
-          <input name="courseId" class="form-control" 
-          [(ngModel)]=course.courseId 
-          placeholder="Enter Course ID" 
-          required pattern="[0-9]{1,2}" 
-          #courseId=ngModel>
-        </td>
-      </tr> -->
+    <table class="table table-striped table-dark">
       <tr>
         <td><label> Course Name </label></td>
         <td>
@@ -39,6 +29,6 @@
     </table>
   </div>
   <div>
-    <button class="btn btn-primary" type="submit" [disabled] = "!addCourseForm.valid">Add Course</button>
+    <button class="btn btn-dark" type="submit" [disabled] = "!addCourseForm.valid">Add Course</button>
   </div>
 </form>

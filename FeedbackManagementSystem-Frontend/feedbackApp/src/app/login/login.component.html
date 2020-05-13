@@ -1,26 +1,29 @@
-<form (ngSubmit)="checkLogin();loginForm.reset() " #loginForm=ngForm>
-  <table class="table table-responsive">
-    <tr><td>Enter Username</td>
-    <td>
-      <input [(ngModel)]="login.name" name="username" placeholder="Enter Username" required pattern="[A-Za-z]{4,}" #username = ngModel>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+  
+
+    <!-- Login Form -->
+    <form (ngSubmit)="checkLogin();loginForm.reset() " #loginForm=ngForm>
+      <input type="text" [(ngModel)]="login.name" id="login" class="fadeIn second" name="username" placeholder="Enter Username" required pattern="[A-Za-z]{4,}" #username = ngModel>
       <div *ngIf="username.dirty && username.touched && username.invalid" class="alert alert-danger">
         Username is invalid
       </div>
-    </td>
-    </tr>
-    <tr>
-      <td>Password</td>
-      <td><input [(ngModel)]="login.password" type="password" name="password" placeholder="Enter Password" required
-        pattern="[A-Za-z0-9]{4,}" #password=ngModel>
-        <div *ngIf="password.dirty && password.touched && password.invalid" class="alert alert-danger">
-          Password is invalid
-      </div>
-      </td>
-    </tr>
-    <tr>
-      <th colspan="2">
-        <button class="btn btn-primary" type="submit" value="Login" [disabled]="!loginForm.valid">Login</button>
-      </th>
-    </tr>
-  </table>
-</form>
+      <input type="text"  [(ngModel)]="login.password" id="password" class="fadeIn third" name="password" placeholder="Enter Password"  required
+      pattern="[A-Za-z0-9]{4,}" #password=ngModel>
+      <div *ngIf="password.dirty && password.touched && password.invalid" class="alert alert-danger">
+        Password is invalid
+    </div>
+      <input type="submit" class="fadeIn fourth" value="Login" [disabled]="!loginForm.valid">
+    </form>
+
+
+  </div>
+</div>

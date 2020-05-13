@@ -5,7 +5,7 @@
   </nav>
 </div>
 <table class="table table-striped table-sm">
-  <label>Select Skills </label>
+  <h5><label>Select Skills </label></h5>
   <tr *ngFor="let s of selectedSkills;let i=index">
     <td>{{s}}</td>
     <td><button class="btn btn-warning" (click)="add(i)">add</button></td>
@@ -15,12 +15,13 @@
 
 <form (ngSubmit)="saveFaculty(); addFacultyForm.reset()" #addFacultyForm=ngForm>
   <div>
-    <table>
+    <table class="table table-striped">
       <tr>
-        <td><label> Faculty Name </label></td>
+        <td><h5><label> Faculty Name </label></h5></td>
         <td>
           <input name="facultyName" class="form-control" [(ngModel)]=faculty.facultyName
             placeholder="Enter Faculty Name" required pattern="([A-z0-9À-ž\s]){2,}" #facultyName=ngModel>
+            
         </td>
       </tr>
       <tr>
