@@ -20,6 +20,7 @@ export class CourseService {
   }
 
   deleteCourse(index : number){
+    console.log(index);
     return this.http.delete("http://localhost:5057/admin/deleteCourse/"+index);
   }
 }

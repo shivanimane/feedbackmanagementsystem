@@ -1,7 +1,11 @@
+<div class="text-right">
+  <nav>
+    <button (click)="redirectToCoordinator()">Back to Coordinator Dashboard</button>
+  </nav>
+</div>
 <div>
-
   <div>
-    <h3 style="text-align: center;">Course Table</h3>
+    <h5 >Select a Course</h5>
     <table class="table table-striped">
       <tr>
         <th>Course Id </th>
@@ -20,7 +24,7 @@
   </div>
   
   <div>
-    <h3 style="text-align: center;">Faculty Table</h3>
+    <h5>Select a Faculty</h5>
     <table class="table table-striped">
       <tr>
         <th>Faculty Id </th>
@@ -42,14 +46,14 @@
     <div>
       <table>
        <tr>
-          <td><label> Start Date </label></td>
+          <td><h5>Enter Start Date</h5></td>
           <td>
             <input type="date" name="Start Date" class="form-control" [(ngModel)]="trainingProgramDate.startDate"
               placeholder="Enter Start Date"  #startdate="ngModel">
           </td>
         </tr>
         <tr>
-          <td><label> End Date </label></td>
+          <td><h5>Enter End Date</h5></td>
           <td>
             <input type="date" name="end Date" class="form-control" [(ngModel)]="trainingProgramDate.endDate"
               placeholder="Enter end Date"  #enddate="ngModel">
@@ -58,7 +62,7 @@
       </table>
     </div>
     <div>
-      <button class="btn btn-primary" type="submit" >Add trainingProgram</button>
+      <button class="btn btn-primary" type="submit" >Add Training Program</button>
     </div>
   </form>
 

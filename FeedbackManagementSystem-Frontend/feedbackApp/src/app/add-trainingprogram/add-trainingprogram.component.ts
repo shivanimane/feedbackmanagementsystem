@@ -58,7 +58,9 @@ export class AddTrainingprogramComponent implements OnInit {
     });
 
   }
-
+  redirectToCoordinator(){
+    this.route.navigate(['coordinator']);
+  }
  
 
 

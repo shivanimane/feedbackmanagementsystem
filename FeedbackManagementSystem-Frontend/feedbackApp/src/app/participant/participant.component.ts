@@ -28,14 +28,14 @@ export class ParticipantComponent implements OnInit {
       console.log(this.trainingProgram);
     });
 
-    // if(this.trainingProgram.trainingCode==null){
-    //  this.flag = false;
-    // }
+    if(this.trainingProgram.trainingCode==null){
+     this.flag = false;
+    }
 
   }
 
-  generateFeedBack(trainingId : number){
-    this.route.navigate(['add-feedback',trainingId]);
+  generateFeedBack(trainingId : number,facultyId:number){
+    this.route.navigate(['add-feedback',trainingId,facultyId]);
   }
 
 }

@@ -10,10 +10,10 @@
     <th>No of Days</th>
     
   </tr>
-  <tr *ngFor="let c of courses; let i =index">
+  <tr *ngFor="let c of courses ">
   <td>{{c.courseId}}</td>
   <td>{{c.courseName}}</td>
   <td>{{c.noOfDays}}</td>
-  <td><button class="btn btn-warning" (click)="remove(i)">Delete</button></td>
+  <td><button class="btn btn-warning" (click)="remove(c.courseId)">Delete</button></td>
 </tr>
 </table>

@@ -1,9 +1,9 @@
-<div *ngIf="flag">
+<div>
 <table class="table table-striped" >
   <tr>
     <th>Training Code</th>
     <th>Course Name </th>
-    <th>faculty Name</th>
+    <th>Faculty Name</th>
     <th>Start Date</th>
     <th>End Date</th>
   </tr>
@@ -13,7 +13,7 @@
   <td>{{trainingProgram.facultyName}}</td>
   <td>{{trainingProgram.startDate}}</td>
   <td>{{trainingProgram.endDate}}</td>
-  <td><button class="btn btn-warning" (click)="generateFeedBack(trainingProgram.trainingCode)">Give Feedback</button></td>
+  <td><button class="btn btn-warning" (click)="generateFeedBack(trainingProgram.trainingCode,trainingProgram.facultyId)">Give Feedback</button></td>
 </tr>
 </table>
 </div>

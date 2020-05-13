@@ -4,7 +4,8 @@
     <th>Faculty Name</th>
     <th>Start Date</th>
     <th>End Date</th>
-    <th>Action</th>
+    <th colspan="2">Action</th>
+    
     
   </tr>
   <tr *ngFor="let c of trainingList">
@@ -14,5 +15,6 @@
   <td>{{c.endDate}}</td>
   
   <td><button class="btn btn-warning" (click)="deleteTraining(c.trainingCode)">Delete</button></td>
+  <td><button class="btn btn-warning" (click)="showFeedback(c.trainingCode)">Show Feedback</button></td>
 </tr>
 </table>

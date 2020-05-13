@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /**
  * @author Uma Shankar
  *
- * 06-May-2020 9:08:23 pm
+ *         06-May-2020 9:08:23 pm
  */
 @Entity
 @Table(name = "PARTICIPANT_ENROLLED")
@@ -19,21 +19,21 @@ public class ParticipantEnrolled {
 
 	@Id
 	@Column(name = "PARTICIPANT_ID")
-	private Integer partEnrollNo;
-	
-	@Column(name="PARTICIPANT_NAME")
-	private String participantName ;
+	private Integer participantId;
+
+	@Column(name = "PARTICIPANT_NAME")
+	private String participantName;
 
 	@ManyToOne
 	@JoinColumn(name = "TRAINING_CODE")
 	private TrainingProgram trainingprogram;
 
-	public Integer getPartEnrollNo() {
-		return partEnrollNo;
+	public Integer getParticipantId() {
+		return participantId;
 	}
 
-	public void setPartEnrollNo(Integer partEnrollNo) {
-		this.partEnrollNo = partEnrollNo;
+	public void setParticipantId(Integer participantId) {
+		this.participantId = participantId;
 	}
 
 	public String getParticipantName() {
@@ -51,8 +51,13 @@ public class ParticipantEnrolled {
 	public void setTrainingprogram(TrainingProgram trainingprogram) {
 		this.trainingprogram = trainingprogram;
 	}
+
+	@Override
+	public String toString() {
+		return "ParticipantEnrolled [participantId=" + participantId + ", participantName=" + participantName
+				+ ", trainingprogram=" + trainingprogram + "]";
+	}
 	
 	
-		
 
 }

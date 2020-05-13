@@ -26,12 +26,16 @@ export class AddFacultyComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.selectedSkills=["Java","AWS","C++"];
+    this.selectedSkills=["Java","AWS","C++","DevOps","RDBMS","GitHub","Spring 5","Microservice","AWS"];
+
   }
 
  
   add(index:number){
+    
     this.checkedSkills.push(this.selectedSkills[index]);
+    this.selectedSkills.splice(index, 1); 
+    
   }
 
   saveFaculty(){

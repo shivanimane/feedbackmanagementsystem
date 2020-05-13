@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FeedbackModel } from '../models/feedback.model';
-import { TrainingProgramModel } from '../models/trainingprogram.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) { 
+   
+  }
+
+  
 
   addFeedback(feedback : FeedbackModel){
     return this.http.post("http://localhost:5054/feedback/addFeedback" , feedback);
@@ -24,6 +28,8 @@ export class FeedbackService {
   }
 
   fetchFeedbackByTrainingCode(index:number){
-    return this.http.get<TrainingProgramModel>("http://localhost:5054/feedback/forEachTrainingProgram/{trainingCode}");
+    console.log(index);
+    return this.http.get<FeedbackModel>("http://localhost:5054/feedback/forEachTrainingProgram/"+index);
   }
+  //("http://localhost:5054/feedback/forEachTrainingProgram/"+empId+"/"+assetId+"/"+quantity);
 }
