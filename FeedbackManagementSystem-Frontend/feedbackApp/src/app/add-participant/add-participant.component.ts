@@ -24,18 +24,23 @@ participantEnrolled : ParticipantEnrolledModel ;
   ngOnInit() {
     this.trainingService.fetchAlltrainingPrograms().subscribe(data => {
       this.trainingList = data;
-      console.log(this.trainingList);
-    })
+      //console.log(this.trainingList);
+    });
     
-    setTimeout(() => { this.reloadData() }, 100);
+    this.employeeService.fetchAllParticipants().subscribe(z => {
+      this.employeeList = z;
+      console.log(this.employeeList);
+    });
+    
+    //setTimeout(() => { this.reloadData() }, 100);
   }
 
-  reloadData() {
-    this.employeeService.fetchAllParticipants().subscribe(data => {
-    this.employeeList = data;
-      console.log(this.employeeList)
-    })
-  }
+  // reloadData() {
+  //   this.employeeService.fetchAllParticipants().subscribe(z => {
+  //   this.employeeList = z;
+  //     console.log(this.employeeList);
+  //   });
+  // }
 
   addTraining(tnumber: number) {
     this.trainingCode = tnumber;

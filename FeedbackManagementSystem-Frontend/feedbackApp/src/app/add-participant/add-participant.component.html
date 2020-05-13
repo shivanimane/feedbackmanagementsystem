@@ -30,10 +30,10 @@
       <th>Action</th>
       
     </tr>
-    <tr *ngFor="let c of employeeList">
-    <td>{{c.employeeName}}</td>
-    <td>{{c.role}}</td>
-    <td><button class="btn btn-success" (click)="addparticipant(c.employeeId)">Add Participant</button></td>
+    <tr *ngFor="let e of employeeList">
+    <td>{{e.employeeName}}</td>
+    <td>{{e.role}}</td>
+    <td><button class="btn btn-success" (click)="addparticipant(e.employeeId)">Add Participant</button></td>
   </tr>
   </table>
 </div>

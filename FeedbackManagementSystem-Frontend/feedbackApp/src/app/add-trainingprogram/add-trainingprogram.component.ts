@@ -20,6 +20,8 @@ export class AddTrainingprogramComponent implements OnInit {
   faculty: FacultyModel[] = [];
   courseId: number;
   facultyId: number;
+  selectedCourse: String="";
+  selectedFaculty: String="";
 
 
   constructor(private service: TrainingProgramService,
@@ -40,15 +42,17 @@ export class AddTrainingprogramComponent implements OnInit {
 
   }
 
-  addCourse(cnumber: number) {
+  addCourse(cnumber: number,cName:String) {
     this.courseId = cnumber;
     console.log(cnumber);
+    this.selectedCourse=cName;
 
   }
 
-  addFaculty(fnumber: number) {
+  addFaculty(fnumber: number,fName:String) {
     this.facultyId = fnumber;
     console.log(fnumber);
+    this.selectedFaculty=fName;
 
   }
 
