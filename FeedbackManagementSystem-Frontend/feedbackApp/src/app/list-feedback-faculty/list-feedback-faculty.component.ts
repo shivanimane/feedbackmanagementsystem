@@ -25,7 +25,12 @@ export class ListFeedbackFacultyComponent implements OnInit {
     this.feedbackService.fetchFeedbackByFacultyId(this.facultyId).subscribe(data =>{
       this.feedbackList=data;
       console.log(this.feedbackList);
+      if(this.feedbackList.length==0){
+        alert("No Feedback Available for this Faculty ");
+        this.router.navigate(['list-faculty']);
+      }
     });
+    
   }
 
   redirectToAdminr(){

@@ -1,4 +1,4 @@
-<form (ngSubmit)="checkLogin()" #loginForm=ngForm>
+<form (ngSubmit)="checkLogin();loginForm.reset() " #loginForm=ngForm>
   <table class="table table-responsive">
     <tr><td>Enter Username</td>
     <td>

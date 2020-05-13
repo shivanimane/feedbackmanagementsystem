@@ -15,9 +15,9 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['login']">Login</a>
           </li>
-         <div class="text-right">
+         <div class="text-right" [hidden]="flag">
           <li class="nav-item">
-            <a class="nav-link" (click)="logout()">Logout</a>
+            <a class="nav-link"  (click)="logout()">Logout</a>
           </li>
          </div>
   

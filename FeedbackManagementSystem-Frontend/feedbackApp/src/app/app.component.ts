@@ -8,10 +8,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Feedback App';
-
+  flag:boolean=false;
   
   
-  constructor(private route: Router){}
+  constructor(private route: Router){
+    if(localStorage.getItem('user')!=null){
+      this.flag=true;
+    }
+  }
 
   logout(){
     localStorage.clear();

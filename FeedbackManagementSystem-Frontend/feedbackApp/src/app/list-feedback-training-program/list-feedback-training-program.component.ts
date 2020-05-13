@@ -24,6 +24,10 @@ export class ListFeedbackTrainingProgramComponent implements OnInit {
     this.service.fetchFeedbackByTrainingCode(this.trainingId).subscribe(data =>{
       this.feedbackList=data;
       console.log(this.feedbackList);
+      if(this.feedbackList.length==0){
+        alert("No Feedback Available for this Training Program ");
+        this.router.navigate(['list-training']);
+      }
     });
   }
 
