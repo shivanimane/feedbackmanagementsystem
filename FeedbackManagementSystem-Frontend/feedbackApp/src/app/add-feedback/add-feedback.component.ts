@@ -14,7 +14,7 @@ import { FeedbackService } from '../service/feedback.service';
 export class AddFeedbackComponent implements OnInit {
 
   feedback : FeedbackModel;
-  
+  fbPrsComm:number;
   
   constructor(private route : ActivatedRoute,
                 private service: FeedbackService,

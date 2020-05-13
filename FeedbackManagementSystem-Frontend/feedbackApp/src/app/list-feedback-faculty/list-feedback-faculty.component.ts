@@ -16,7 +16,7 @@ export class ListFeedbackFacultyComponent implements OnInit {
   constructor(private feedbackService: FeedbackService,
               private route:ActivatedRoute,
               private router: Router) {
-              
+              this.feedback = new FeedbackModel();
                }
             
   ngOnInit() {
