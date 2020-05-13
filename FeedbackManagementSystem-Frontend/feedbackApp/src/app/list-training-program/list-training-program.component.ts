@@ -36,4 +36,27 @@ export class ListTrainingProgramComponent implements OnInit {
     this.route.navigate(['list-feedback-training-program',tId]);
   }
 
+  
+  clickOnAddTrainingProgram(){
+    this.route.navigate(['add-training']);
+  }
+
+  clickOfListTrainingProgram(){
+    this.route.navigate(['list-training']);
+  }
+
+  clickOnAddParticipantEnrolled(){
+    this.route.navigate(['add-participant']);
+  }
+  clickOfListParticipantEnrolled(){
+    this.route.navigate(['list-participant']);
+  }
+  logout(){
+    //localStorage.clear();
+    sessionStorage.clear();
+    this.route.navigate(['login']);
+  }
+
+
+
 }

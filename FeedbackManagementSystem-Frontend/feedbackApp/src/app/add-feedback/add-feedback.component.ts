@@ -40,6 +40,10 @@ export class AddFeedbackComponent implements OnInit {
     });
   }
 
+  enrolledTrainingProgram(){
+    this.router.navigate(['list-participant']);
+  }
+
 }
 
 // FeedbackModel{

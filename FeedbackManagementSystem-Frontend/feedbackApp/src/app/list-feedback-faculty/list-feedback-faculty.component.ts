@@ -33,8 +33,25 @@ export class ListFeedbackFacultyComponent implements OnInit {
     
   }
 
-  redirectToAdminr(){
-    this.router.navigate(['admin']);
+  clickOnAddCourse(){
+    this.router.navigate(['add-course']);
   }
 
+  clickOnListCourse(){
+    this.router.navigate(['list-course']);
+  }
+
+  clickOnAddFaculty(){
+    this.router.navigate(['add-faculty']);
+  }
+
+  clickOnListFaculty(){
+    this.router.navigate(['list-faculty']);
+  }
+
+  logout(){
+    //localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
 }

@@ -16,7 +16,7 @@
       <div *ngIf="username.dirty && username.touched && username.invalid" class="alert alert-danger">
         Username is invalid
       </div>
-      <input type="text"  [(ngModel)]="login.password" id="password" class="fadeIn third" name="password" placeholder="Enter Password"  required
+      <input type="password"  [(ngModel)]="login.password" id="password" class="fadeIn third" name="password" placeholder="Enter Password"  required
       pattern="[A-Za-z0-9]{4,}" #password=ngModel>
       <div *ngIf="password.dirty && password.touched && password.invalid" class="alert alert-danger">
         Password is invalid

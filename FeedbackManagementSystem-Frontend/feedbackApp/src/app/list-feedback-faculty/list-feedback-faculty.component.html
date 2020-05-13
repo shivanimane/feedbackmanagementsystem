@@ -1,54 +1,60 @@
-<div class="text-right">
-  <nav>
-    <button (click)="redirectToAdminr()">Back to Admin Dashboard</button>
-  </nav>
-</div>
-<table>
-<tr>
-  <th>Date of Feedback</th>
-  <th>Presentation and Communication Skills </th>
-  <th>Ability to Clarify Doubts </th>
-  <th>Time Management Skills </th>
-  <th>Providing Handouts and other material </th>
-  <th>Hardware, Software and Network Ability </th>
-  <th>Comments </th>
-  <th>Suggestions </th>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
   
-</tr>
-<tr *ngFor="let f of feedbackList">
-  <td>{{f.feedbackDate}}</td>
-  <td>{{f.fbPrsComm}}</td>
-  <td>{{f.fbClrfyDbts}}</td>
-  <td>{{f.fbTm}}</td>
-  <td>{{f.fbHndOut}}</td>
-  <td>{{f.fbHwSwNtwrk}}</td>
-  <td>{{f.comments}}</td>
-  <td>{{f.suggestions}}</td>
-  
-</tr>
-</table>
+  <head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
+  </head>
+  <body>
+      <div class="container-fluid">
+          <div class="row">    
+              <div id="admin-sidebar" class="col-md-2 p-x-0 p-y-3">
+                  <ul class="sidenav admin-sidenav list-unstyled">
+                      <li><a (click)="clickOnAddCourse()">Add Course</a></li>
+                      <li><a (click)="clickOnListCourse()">Show Courses</a></li>
+                      <li><a (click)="clickOnAddFaculty()">Add Faculty</a></li>
+                      <li><a (click)="clickOnListFaculty()">Show Faculties</a></li>
+                      <li><a (click)="logout()">Logout</a></li>
+                      <!-- <li><a href="#">NavLink 6</a></li>                   -->
+                  </ul>
+            </div>
+            <!-- Enter the code here -->
+            <div id="admin-main-control" class="col-md-10 p-x-3 p-y-1">
 
-<!-- 
 
-<h5>Feedback for :</h5>
-<label>Presentation and Communication Skills : </label>&nbsp;
-<label>{{feedback.fbPrsComm}}</label> /5
-<br>
-<label>Ability to Clarify Doubts : </label>&nbsp;
-<label>{{feedback.fbClrfyDbts}}</label> /5
-<br>
-<label>Time Management Skills : </label>&nbsp;
-<label>{{feedback.fbTm}}</label> /5
-<br>
-<label>Providing Handouts and other material : </label>&nbsp;
-<label>{{feedback.fbHndOut}}</label> /5
-<br>
-<label>Hardware, Software and Network Ability : </label>&nbsp;
-<label>{{feedback.fbHwSwNtwrk}}</label> /5
-<br><br>
-<h5>Comments :</h5>
-<label>{{feedback.comments}}</label>
-<br><br>
-<h5>Suggestions :</h5>
-<label>{{feedback.suggestions}}</label>
-<br><br> -->
+              <!-- Enter the code here -->
+    
+      
+              <table class="table table-bordered">
+                <tr>
+                  <th>Date of Feedback</th>
+                  <th>Presentation and Communication Skills </th>
+                  <th>Ability to Clarify Doubts </th>
+                  <th>Time Management Skills </th>
+                  <th>Providing Handouts and other material </th>
+                  <th>Hardware, Software and Network Ability </th>
+                  <th>Comments </th>
+                  <th>Suggestions </th>
+              
+                </tr>
+                <tr *ngFor="let f of feedbackList">
+                  <td>{{f.feedbackDate}}</td>
+                  <td>{{f.fbPrsComm}}</td>
+                  <td>{{f.fbClrfyDbts}}</td>
+                  <td>{{f.fbTm}}</td>
+                  <td>{{f.fbHndOut}}</td>
+                  <td>{{f.fbHwSwNtwrk}}</td>
+                  <td>{{f.comments}}</td>
+                  <td>{{f.suggestions}}</td>
+              
+                </tr>
+              </table>
+            </div>
+
+          </div>  
+      </div> <!-- /.container-fluid -->
+  </body>
+
+
+

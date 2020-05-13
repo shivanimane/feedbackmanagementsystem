@@ -31,8 +31,25 @@ export class ListFeedbackTrainingProgramComponent implements OnInit {
     });
   }
 
-  redirectToCoordinator(){
-    this.router.navigate(['coordinator'])
+  clickOnAddTrainingProgram(){
+    this.router.navigate(['add-training']);
   }
+
+  clickOfListTrainingProgram(){
+    this.router.navigate(['list-training']);
+  }
+
+  clickOnAddParticipantEnrolled(){
+    this.router.navigate(['add-participant']);
+  }
+  clickOfListParticipantEnrolled(){
+    this.router.navigate(['list-participant']);
+  }
+  logout(){
+    //localStorage.clear();
+    sessionStorage.clear();
+    this.router.navigate(['login']);
+  }
+
 
 }

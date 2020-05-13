@@ -33,8 +33,6 @@ export class ParticipantComponent implements OnInit {
       }
     });
 
-    
-
   }
 
   generateFeedBack(trainingId : number,facultyId:number){
