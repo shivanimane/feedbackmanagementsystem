@@ -1,5 +1,6 @@
 <table class="table table-striped">
   <tr>
+    <th>Training Program Id</th>
     <th>Course Name </th>
     <th>Faculty Name</th>
     <th>Start Date</th>
@@ -9,6 +10,7 @@
     
   </tr>
   <tr *ngFor="let c of trainingList">
+  <td>{{c.trainingCode}}</td>  
   <td>{{c.courseName}}</td>
   <td>{{c.facultyName}}</td>
   <td>{{c.startDate}}</td>

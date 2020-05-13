@@ -3,25 +3,19 @@
     <th>Participant Id</th>
     <th>Participant Name</th>
     <th>Training Code</th>
-    
-    
+    <th>Course Name</th>
+    <th>Faculty Name</th>
+
+
   </tr>
-<!-- 
+
   <tr *ngFor="let c of enrolledList">
-  <td>{{c.participantId}}</td>
-  <td>{{c.participantName}}</td>
+    <td>{{c.participantId}}</td>
+    <td>{{c.participantName}}</td>
+    <td>{{c.trainingCode}}</td>
+    <td>{{c.courseName}}</td>
+    <td>{{c.facultyName}}</td>
   </tr>
-  <tr *ngFor="let t of enrolledList.trainingProgram>
-    <td>{{t.trainingCode}}</td>
-  </tr> -->
-  <li *ngFor="let c of enrolledList">
-    {{c.participantId}}<br>
-    {{c.participantName}}
-    <ul>
-        <li *ngFor="let t of c.trainingProgram">
-           {{ t.trainingCode }}
-        </li>
-    </ul>
-</li>
+
 
 </table>

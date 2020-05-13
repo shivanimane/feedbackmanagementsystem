@@ -32,7 +32,6 @@ public class ParicipantEnrollmentController {
 	@Autowired
 	TrainingProgramMaintainance trainingProgramMaintainance;
 
-	
 	private ParticipantEnrolled pe;
 
 	// http://localhost:5056/coordinator/participantenroll/{empId}/{tId}
@@ -40,34 +39,28 @@ public class ParicipantEnrollmentController {
 	private ParticipantEnrolled getObjectOfEmployee(@PathVariable(value = "empId") Integer empId,
 			@PathVariable(value = "tId") Integer tId) {
 
-		
 		Map<String, Integer> params = new HashMap<String, Integer>();
 		params.put("empId", empId);
 		String url = "http://localhost:8034/employee/employeebyid/{empId}";
 		Employee employee = restTemplate.getForObject(url, Employee.class, params);
 		System.out.println(employee.getRole());
 
-
 		TrainingProgram tp = trainingProgramMaintainance.getTrainingProgramById(tId);
-		
-		//if (tp != null & employee.getRole().equalsIgnoreCase("participant")) {
-		
-		
-		
+
 		pe = trainingProgramMaintainance.enrollParticipant(employee, tp);
 		return pe;
 	}
+
 	// http://localhost:5056/coordinator/participantenroll/gettrainingprogram/
 	@RequestMapping("/participantenroll/gettrainingprogram/{empId}")
 	private TrainingProgram getTrainingProgramByParticipantId(@PathVariable(value = "empId") Integer empId) {
 		return trainingProgramMaintainance.getTrainingProgramByParticipantId(empId);
 	}
-	
+
 	// http://localhost:5056/coordinator/getAllParticipantEnrolled
 	@GetMapping("/getAllParticipantEnrolled")
-	private List<ParticipantEnrolled> getAllParticipantEnrolled(){
+	private List<ParticipantEnrolled> getAllParticipantEnrolled() {
 		return trainingProgramMaintainance.getAllParticipantEnrolled();
 	}
-	
 
 }

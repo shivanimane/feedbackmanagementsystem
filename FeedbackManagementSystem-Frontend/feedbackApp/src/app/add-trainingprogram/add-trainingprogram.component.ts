@@ -9,6 +9,7 @@ import { FacultyModel } from '../models/faculty.model';
 
 
 
+
 @Component({
   selector: 'app-add-trainingprogram',
   templateUrl: './add-trainingprogram.component.html',
@@ -22,6 +23,7 @@ export class AddTrainingprogramComponent implements OnInit {
   facultyId: number;
   selectedCourse: String="";
   selectedFaculty: String="";
+
 
 
   constructor(private service: TrainingProgramService,
@@ -57,6 +59,7 @@ export class AddTrainingprogramComponent implements OnInit {
   }
 
   savetrainingProgram() {
+    //this.Startdate = form.value.startdate ;
     this.service.addtrainingProgram(this.trainingProgramDate , this.courseId ,this.facultyId).subscribe(response => {
       this.route.navigate(['list-training']);
     });
