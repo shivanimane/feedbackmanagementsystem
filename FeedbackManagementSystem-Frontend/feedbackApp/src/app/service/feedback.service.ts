@@ -24,12 +24,12 @@ export class FeedbackService {
 
   fetchFeedbackByFacultyId(index:number){
     //return this.http.get<FeedbackModel>("http://localhost:5053/feedback/forEachFaculty/{facultyId}");
-    return this.http.get<FeedbackModel>("http://localhost:5054/feedback/forEachFaculty/"+index);
+    return this.http.get<FeedbackModel[]>("http://localhost:5054/feedback/forEachFaculty/"+index);
   }
 
   fetchFeedbackByTrainingCode(index:number){
     console.log(index);
-    return this.http.get<FeedbackModel>("http://localhost:5054/feedback/forEachTrainingProgram/"+index);
+    return this.http.get<FeedbackModel[]>("http://localhost:5054/feedback/forEachTrainingProgram/"+index);
   }
   //("http://localhost:5054/feedback/forEachTrainingProgram/"+empId+"/"+assetId+"/"+quantity);
 }
