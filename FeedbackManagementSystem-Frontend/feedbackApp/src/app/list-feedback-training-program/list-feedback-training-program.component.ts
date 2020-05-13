@@ -11,19 +11,19 @@ import { FeedbackModel } from '../models/feedback.model';
 export class ListFeedbackTrainingProgramComponent implements OnInit {
 
   trainingId: number;
-  feedback: FeedbackModel;
+  feedbackList: FeedbackModel[]=[];
   constructor(private service: FeedbackService,
                 private route: ActivatedRoute,
                 private router:Router) { 
-                  this.feedback = new FeedbackModel();
+                 // this.feedback = new FeedbackModel();
                 }
 
   ngOnInit() {
     this.route.params.subscribe(x=>this.trainingId=x['tId']);
     console.log(this.trainingId);
     this.service.fetchFeedbackByTrainingCode(this.trainingId).subscribe(data =>{
-      this.feedback=data;
-      console.log(this.feedback);
+      this.feedbackList=data;
+      console.log(this.feedbackList);
     });
   }
 

@@ -6,6 +6,7 @@
 package com.cg.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,13 +39,13 @@ public class FeedbackServiceImpl implements FeedbackService{
 	//Needs to be corrected
 	
 	@Override
-	public Feedback getFeedbackByFacultyId(Integer facultyId) {
-		return this.feedbackDao.findAll().stream().filter(f->f.getFacultyId()==facultyId).findFirst().get();
+	public List<Feedback> getFeedbackByFacultyId(Integer facultyId) {
+		return this.feedbackDao.findAll().stream().filter(f->f.getFacultyId()==facultyId).collect(Collectors.toList());
 	}
 
 	@Override
-	public Feedback getFeedbackByTrainingProgram(Integer trainingCode) {
-		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode()==trainingCode).findFirst().get();
+	public List<Feedback> getFeedbackByTrainingProgram(Integer trainingCode) {
+		return this.feedbackDao.findAll().stream().filter(f->f.getTrainingCode()==trainingCode).collect(Collectors.toList());
 		
 	}
 
