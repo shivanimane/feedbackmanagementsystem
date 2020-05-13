@@ -10,22 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListFeedbackFacultyComponent implements OnInit {
 
-  feedback:FeedbackModel;
+  feedbackList:FeedbackModel[]=[];
   facultyId : number;
 
   constructor(private feedbackService: FeedbackService,
               private route:ActivatedRoute,
               private router: Router) {
-              this.feedback = new FeedbackModel();
+             // this.feedbackL = new FeedbackModel();
                }
             
   ngOnInit() {
     this.route.params.subscribe(x=>this.facultyId=x['id']);
     console.log(this.facultyId);
     this.feedbackService.fetchFeedbackByFacultyId(this.facultyId).subscribe(data =>{
-      this.feedback=data;
-      console.log(this.feedback);
+      this.feedbackList=data;
+      console.log(this.feedbackList);
+      if(this.feedbackList.length==0){
+        alert("No Feedback Available for this Faculty ");
+        this.router.navigate(['list-faculty']);
+      }
     });
+    
   }
 
   redirectToAdminr(){

@@ -18,12 +18,14 @@ errMsg: string;
       console.error('Backend returned status code:', error.status);
       console.error('Response body:', error.message);
       this.errMsg = error.message;
+      router.navigate(['error',this.errMsg]);
     } else {
       // A client-side or network error occurred
       console.error('An error occurred:', error.message);
       this.errMsg = error.message;
+      
     }
 
-    router.navigate(['error',this.errMsg]);
+    // router.navigate(['error',this.errMsg]);
   }
 }

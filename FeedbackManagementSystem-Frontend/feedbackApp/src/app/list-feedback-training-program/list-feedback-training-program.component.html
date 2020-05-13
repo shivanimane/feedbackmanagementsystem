@@ -3,7 +3,31 @@
     <button (click)="redirectToCoordinator()">Back to Coordinator Dashboard</button>
   </nav>
 </div>
-<h5>Feedback for :</h5>
+<table>
+  <tr>
+    <th>Date of Feedback</th>
+    <th>Presentation and Communication Skills </th>
+    <th>Ability to Clarify Doubts </th>
+    <th>Time Management Skills </th>
+    <th>Providing Handouts and other material </th>
+    <th>Hardware, Software and Network Ability </th>
+    <th>Comments </th>
+    <th>Suggestions </th>
+    
+  </tr>
+  <tr *ngFor="let f of feedbackList">
+    <td>{{f.feedbackDate}}</td>
+    <td>{{f.fbPrsComm}}</td>
+    <td>{{f.fbClrfyDbts}}</td>
+    <td>{{f.fbTm}}</td>
+    <td>{{f.fbHndOut}}</td>
+    <td>{{f.fbHwSwNtwrk}}</td>
+    <td>{{f.comments}}</td>
+    <td>{{f.suggestions}}</td>
+    
+  </tr>
+  </table>
+<!-- <h5>Feedback for :</h5>
 <label>Presentation and Communication Skills : </label>&nbsp;
 <label>{{feedback.fbPrsComm}}</label> /5
 <br>
@@ -24,4 +48,4 @@
 <br><br>
 <h5>Suggestions :</h5>
 <label>{{feedback.suggestions}}</label>
-<br><br>
+<br><br> -->

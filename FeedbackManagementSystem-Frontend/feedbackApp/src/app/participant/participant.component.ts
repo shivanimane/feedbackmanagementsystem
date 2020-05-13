@@ -26,11 +26,13 @@ export class ParticipantComponent implements OnInit {
     this.trainingservice.getTrainingProgramByPartcipantId(this.participantId).subscribe(data=> {
       this.trainingProgram = data;
       console.log(this.trainingProgram);
+      if(this.trainingProgram==null){
+        alert("You are not enrolled to any Training Program. Contact Coordinator! ");
+        this.route.navigate(['login']);
+      }
     });
 
-    if(this.trainingProgram.trainingCode==null){
-     this.flag = false;
-    }
+    
 
   }
 

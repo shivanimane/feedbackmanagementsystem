@@ -81,6 +81,7 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		
 	}
 
+	// CHANGES NEEDED HERE
 	@Override
 	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
 		List<ParticipantEnrolled> enrollmentList = participantEnrolledDao.findAll();

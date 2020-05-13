@@ -23,10 +23,17 @@ export class LoginComponent implements OnInit {
    
   }
 
+ 
+
   checkRole(emp : EmployeeModel){
     
+    if(emp==null){
+      alert("Invalid Username and Password");
+    }
+
     localStorage.setItem('user',this.employee.employeeId);
     console.log(emp.role);
+    
     if(emp.role=="admin"){
       this.route.navigate(['admin']);
     }else if(emp.role=="coordinator"){

@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author Uma Shankar
  *
@@ -32,6 +35,7 @@ public class ParticipantEnrolled implements java.io.Serializable {
 
 	@ManyToOne( cascade=CascadeType.ALL)
 	@JoinColumn(name = "TRAINING_CODE")
+	@Cascade(CascadeType.ALL)
 	private TrainingProgram trainingprogram;
 
 	public Integer getParticipantId() {
