@@ -22,18 +22,15 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ParticipantComponent } from './participant/participant.component';
 import { ListFeedbackTrainingProgramComponent } from './list-feedback-training-program/list-feedback-training-program.component';
 import { ListParticipantComponent } from './list-participant/list-participant.component';
-
-
-
 import { AddParticipantComponent } from './add-participant/add-participant.component';
 import { ErrorComponent } from './error/error.component';
 import { GlobalErrorService } from './service/global-error.service';
 
 
 
-
 const routes : Routes = [
   {path:'login', component:LoginComponent},
+  {path:'admin', component:AdminComponent},
   {path:'home', component:HomeComponent},
   {path:'add-course', component:AddCourseComponent},
   {path:'list-course', component:ListCourseComponent},
@@ -43,16 +40,19 @@ const routes : Routes = [
   {path:'add-feedback/:tId/:fId', component:AddFeedbackComponent},
   {path:'add-training',component:AddTrainingprogramComponent},
   {path:'list-training',component:ListTrainingProgramComponent},
-
   {path:'list-participant', component:ListParticipantComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'add-participant' , component:AddParticipantComponent},
-
+  {path:'participant', component:ParticipantComponent},
+  {path:'error/:errMsg', component:ErrorComponent},
+  {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
+  {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
   {path:'', redirectTo:'home', pathMatch:"full"},
   {path:'*', redirectTo:'home', pathMatch:"full"}
 ];
 
 @NgModule({
+  declarations: [
     AppComponent,
     LoginComponent,
     AdminComponent,
@@ -72,12 +72,11 @@ const routes : Routes = [
     ListParticipantComponent,
     ErrorComponent,
     AddParticipantComponent
-
-  ,
-
+  ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     BarRatingModule
   ],
