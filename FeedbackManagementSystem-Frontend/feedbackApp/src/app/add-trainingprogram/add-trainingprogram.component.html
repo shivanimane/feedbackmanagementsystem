@@ -5,7 +5,8 @@
 </div>
 <div>
   <div>
-    <h5 >Select a Course</h5>
+    <h5 >Select a Course</h5><br>
+    <label><b>Selected Course</b> :{{selectedCourse}}</label>
     <table class="table table-striped">
       <tr>
         <th>Course Id </th>
@@ -18,13 +19,14 @@
       <td>{{c.courseId}}</td>
       <td>{{c.courseName}}</td>
       <td>{{c.noOfDays}}</td>
-      <td><button class="btn btn-success" (click)="addCourse(c.courseId)">Add</button></td>
+      <td><button class="btn btn-success" (click)="addCourse(c.courseId,c.courseName)">Add</button></td>
     </tr>
     </table>
   </div>
   
   <div>
     <h5>Select a Faculty</h5>
+    <label><b>Selected Faculty</b> :{{selectedFaculty}}</label>
     <table class="table table-striped">
       <tr>
         <th>Faculty Id </th>
@@ -37,7 +39,7 @@
       <td>{{f.facultyId}}</td>
       <td>{{f.facultyName}}</td>
       <td>{{f.skills}}</td>
-      <td><button class="btn btn-success" (click)="addFaculty(f.facultyId)">Add</button></td>
+      <td><button class="btn btn-success" (click)="addFaculty(f.facultyId,f.facultyName)">Add</button></td>
     </tr>
     </table>
   </div>

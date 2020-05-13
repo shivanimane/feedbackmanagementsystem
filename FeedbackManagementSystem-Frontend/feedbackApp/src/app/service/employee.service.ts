@@ -12,5 +12,6 @@ Employee : EmployeeModel[]=[];
 
   fetchAllParticipants(){
     return this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllParticipantList");
+    console.log(this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllParticipantList"));
   }
 }
