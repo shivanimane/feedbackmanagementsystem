@@ -39,4 +39,10 @@ export class ParticipantComponent implements OnInit {
     this.route.navigate(['add-feedback',trainingId,facultyId]);
   }
 
+  logout(){
+    //localStorage.clear();
+    sessionStorage.clear();
+    this.route.navigate(['login']);
+  }
+
 }

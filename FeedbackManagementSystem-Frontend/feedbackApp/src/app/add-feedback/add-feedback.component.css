@@ -1,7 +1,3 @@
-.error{
-    color:red;
-    font-size: small;
-}
 @import 'https://fonts.googleapis.com/css?family=Raleway:300,400';
 
 
@@ -27,7 +23,7 @@ body {
 	border: 1px solid #333; 
 }
 .admin-sidenav li a {
-	color: #fff; 
+	color: #fff;  
 }
 
 .admin-sidenav li a:active {

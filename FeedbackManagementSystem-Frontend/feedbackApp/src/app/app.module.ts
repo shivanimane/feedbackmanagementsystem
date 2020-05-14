@@ -71,15 +71,18 @@ const routes : Routes = [
     ListFeedbackTrainingProgramComponent,
     ListParticipantComponent,
     ErrorComponent,
-    AddParticipantComponent,
-    
+    AddParticipantComponent
+     
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule, 
     RouterModule.forRoot(routes),
-    BarRatingModule
+    BarRatingModule,
+    
+    
+    
   ],
   providers: [
     {provide:ErrorHandler , useClass : GlobalErrorService}
