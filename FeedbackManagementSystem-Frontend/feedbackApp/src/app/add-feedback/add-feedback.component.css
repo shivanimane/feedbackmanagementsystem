@@ -1,9 +1,8 @@
-.error{
-    color:red;
-    font-size: small;
-}
 @import 'https://fonts.googleapis.com/css?family=Raleway:300,400';
 
+.error{
+	color:red;
+}
 
 body {
     font-family: 'Raleway:300', sans-serif

@@ -40,7 +40,7 @@ export class ListFeedbackTrainingProgramComponent implements OnInit {
   }
 
   clickOnAddParticipantEnrolled(){
-    this.router.navigate(['add-participant']);
+    this.router.navigate(['enroll-participant']);
   }
   clickOfListParticipantEnrolled(){
     this.router.navigate(['list-participant']);

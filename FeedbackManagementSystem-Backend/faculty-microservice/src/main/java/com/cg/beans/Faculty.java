@@ -27,12 +27,6 @@ public class Faculty {
 	@Column(name="FACULTY_NAME")
 	private String facultyName;
 	
-//	@ManyToMany
-//	@JoinTable(name = "skills_list", 
-//	joinColumns =  @JoinColumn(name = "FACULTY_ID"),
-//	inverseJoinColumns = @JoinColumn(name = "SKILL_ID"))
-//	private List<Skills> listOfSkills = new ArrayList<Skills>();
-//	
 	@Column(name ="skills")
 	private String[] skills;
 	/**

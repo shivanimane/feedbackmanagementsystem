@@ -16,11 +16,13 @@ import com.cg.bean.TrainingProgram;
  */
 public interface TrainingProgramMaintainance {
 	
+	//Training Program specific functions
 	List<TrainingProgram> getAllTrainingProgram();
 	TrainingProgram getTrainingProgramById(Integer trainingCode );
 	TrainingProgram addTrainingProgram(TrainingProgram trainingProgram);
 	Boolean deleteTrainingProgram(Integer trainingCode);
-	TrainingProgram isTrainingProgram(Integer trainingCode); 
+	
+	//Participant Enrollment 
 	ParticipantEnrolled enrollParticipant(Employee employee , TrainingProgram tp);
 	TrainingProgram getTrainingProgramByParticipantId(Integer participantId);
 	List<ParticipantEnrolled> getAllParticipantEnrolled();

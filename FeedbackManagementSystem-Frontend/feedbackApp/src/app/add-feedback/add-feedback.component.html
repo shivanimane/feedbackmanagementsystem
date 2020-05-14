@@ -98,8 +98,10 @@
                 <input name="comments" placeholder="Comments.." 
                 [(ngModel)]=feedback.comments 
                      #comments=ngModel 
+                     required
                 class="form-control">
               </div>
+              <div class="error" *ngIf="form.submitted && comments.invalid">Required</div>
             </div>
           
             <div class="col">
@@ -109,15 +111,17 @@
                 <input name="suggestions" placeholder="Suggestions.." 
                 [(ngModel)]=feedback.suggestions 
                      #suggestions=ngModel 
+                     required
                 class="form-control">
               </div>
+              <div class="error" *ngIf="form.submitted && comments.invalid">Required</div>
             </div>
           
             <!--Date of Feeback Submission-->
           
             <!-- Submit Button -->
             <div class="col">
-              <input type="submit" value="Submit" class="btn btn-primary">
+              <input type="submit" [disabled] = "!form.valid" value="Submit"  class="btn btn-primary">
             </div>
           </form>
         <!--   -->
