@@ -24,6 +24,7 @@ import { ListParticipantComponent } from './list-participant/list-participant.co
 import { AddParticipantComponent } from './enroll-participant/enroll-participant.component';
 import { ErrorComponent } from './error/error.component';
 import { GlobalErrorService } from './service/global-error.service';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -46,6 +47,7 @@ const routes : Routes = [
   {path:'error/:errMsg', component:ErrorComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
+  {path:'register', component: RegisterComponent},
   {path:'', redirectTo:'login', pathMatch:"full"},
   {path:'*', redirectTo:'login', pathMatch:"full"},
   //{path:'admin/add-course', component: AddCourseComponent}
@@ -72,14 +74,18 @@ const routes : Routes = [
     ListParticipantComponent,
     ErrorComponent,
     AddParticipantComponent,
-    
+    RegisterComponent
+     
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
+    HttpClientModule, 
     RouterModule.forRoot(routes),
-    BarRatingModule
+    BarRatingModule,
+    
+    
+    
   ],
   providers: [
     {provide:ErrorHandler , useClass : GlobalErrorService}

@@ -14,4 +14,12 @@ Employee : EmployeeModel[]=[];
     return this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllParticipantList");
     console.log(this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllParticipantList"));
   }
+
+  fetchAllEmployee(){
+    return this.http.get<EmployeeModel[]>("http://localhost:8034/employee/getAllEmployees");
+  }
+
+  registerEmployee(emp : EmployeeModel){
+    return this.http.post<EmployeeModel>("http://localhost:8034/employee/addemployee", emp);
+  }
 }

@@ -7,6 +7,7 @@ import com.cg.beans.Employee;
 public interface EmployeeService {
 	
 	public Employee addEmployee(Employee e);
+	public List<Employee> getallEmployee();
 	public boolean deleteEmployee(int empId);
 	public Employee updateEmployee(Employee e);
 	public Employee checkRole(int empId);
