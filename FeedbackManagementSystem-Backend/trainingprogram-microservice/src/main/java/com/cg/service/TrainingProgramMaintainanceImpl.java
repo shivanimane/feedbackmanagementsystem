@@ -58,11 +58,12 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		for (int i = 0; i < enrollmentList.size(); i++) {
 			if (enrollmentList.get(i).getParticipantId() == participantId) {
 				trainingCode = enrollmentList.get(i).getTrainingCode();
+				return this.trainingProgramDao.findById(trainingCode).get();
 			}
 
 		}
-		return this.trainingProgramDao.findById(trainingCode).get();
 
+		return null;
 	}
 
 }

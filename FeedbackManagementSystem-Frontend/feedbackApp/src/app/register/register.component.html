@@ -26,7 +26,7 @@
               <div>
                 <table class="table table-striped ">
                   <tr>
-                    <td><label> Name </label></td>
+                    <td><label>User-Name </label></td>
                     <td>
                       <input name="username" class="form-control" 
                       [(ngModel)]=emp.employeeName
@@ -36,7 +36,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td><label> password </label></td>
+                    <td><label> Password </label></td>
                     <td>
                       <input type="password" name="password" class="form-control" 
                       [(ngModel)]=emp.password 
@@ -53,10 +53,10 @@
                       placeholder="Enter role" 
                       required pattern= "[A-Za-z0-9]{4,}" 
                       #role = ngModel> -->
-                      <select name="role" [(ngModel)]=emp.role #role = ngModel required> 
+                      <select  name="role" [(ngModel)]="emp.role" #role = ngModel > 
                         <option value="admin">admin</option>
                         <option value="participant">participant</option>
-                        <option value="cooridnator">cooridnator</option>
+                        <option value="coordinator">coordinator</option>
                         
                       </select>
                     </td>

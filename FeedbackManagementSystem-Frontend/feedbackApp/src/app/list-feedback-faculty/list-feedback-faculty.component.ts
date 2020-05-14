@@ -10,46 +10,46 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListFeedbackFacultyComponent implements OnInit {
 
-  feedbackList:FeedbackModel[]=[];
-  facultyId : number;
+  feedbackList: FeedbackModel[] = [];
+  facultyId: number;
 
   constructor(private feedbackService: FeedbackService,
-              private route:ActivatedRoute,
-              private router: Router) {
-             // this.feedbackL = new FeedbackModel();
-               }
-            
+    private route: ActivatedRoute,
+    private router: Router) {
+    // this.feedbackL = new FeedbackModel();
+  }
+
   ngOnInit() {
-    this.route.params.subscribe(x=>this.facultyId=x['id']);
+    this.route.params.subscribe(x => this.facultyId = x['id']);
     console.log(this.facultyId);
-    this.feedbackService.fetchFeedbackByFacultyId(this.facultyId).subscribe(data =>{
-      this.feedbackList=data;
+    this.feedbackService.fetchFeedbackByFacultyId(this.facultyId).subscribe(data => {
+      this.feedbackList = data;
       console.log(this.feedbackList);
-      if(this.feedbackList.length==0){
+      if (this.feedbackList.length == 0) {
         alert("No Feedback Available for this Faculty ");
         this.router.navigate(['list-faculty']);
       }
     });
-    
+
   }
 
-  clickOnAddCourse(){
+  clickOnAddCourse() {
     this.router.navigate(['add-course']);
   }
 
-  clickOnListCourse(){
+  clickOnListCourse() {
     this.router.navigate(['list-course']);
   }
 
-  clickOnAddFaculty(){
+  clickOnAddFaculty() {
     this.router.navigate(['add-faculty']);
   }
 
-  clickOnListFaculty(){
+  clickOnListFaculty() {
     this.router.navigate(['list-faculty']);
   }
 
-  logout(){
+  logout() {
     //localStorage.clear();
     sessionStorage.clear();
     this.router.navigate(['login']);

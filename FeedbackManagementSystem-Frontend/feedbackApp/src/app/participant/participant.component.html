@@ -32,6 +32,7 @@
               <th>Faculty Name</th>
               <th>Start Date</th>
               <th>End Date</th>
+              <th>Action</th>
             </tr>
             <tr>
             <td>{{trainingProgram.trainingCode}}</td>
@@ -39,7 +40,7 @@
             <td>{{trainingProgram.facultyName}}</td>
             <td>{{trainingProgram.startDate}}</td>
             <td>{{trainingProgram.endDate}}</td>
-            <td><button class="btn btn-warning" (click)="generateFeedBack(trainingProgram.trainingCode,trainingProgram.facultyId)">Give Feedback</button></td>
+            <td><button class="btn btn-primary" (click)="generateFeedBack(trainingProgram.trainingCode,trainingProgram.facultyId)">Give Feedback</button></td>
           </tr>
           </table>
           </div>

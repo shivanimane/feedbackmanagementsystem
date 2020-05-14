@@ -13,34 +13,33 @@ import { FeedbackService } from '../service/feedback.service';
 })
 export class AddFeedbackComponent implements OnInit {
 
-  feedback : FeedbackModel;
-  fbPrsComm:number;
-  
-  constructor(private route : ActivatedRoute,
-                private service: FeedbackService,
-                private router: Router) { 
-               // this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-               console.log(formatDate(new Date(),'yyyy/MM/dd', 'en'));
-              }
+  feedback: FeedbackModel;
+  fbPrsComm: number;
 
-  ngOnInit() {
-    this.feedback =new FeedbackModel();
+  constructor(private route: ActivatedRoute,
+    private service: FeedbackService,
+    private router: Router) {
+    console.log(formatDate(new Date(), 'yyyy/MM/dd', 'en'));
   }
 
-  onSubmit(form : NgForm){
+  ngOnInit() {
+    this.feedback = new FeedbackModel();
+  }
+
+  onSubmit(form: NgForm) {
     console.log(this.feedback);
-    this.route.params.subscribe(x=>this.feedback.trainingCode=x['tId']);
-    this.route.params.subscribe(x=>this.feedback.facultyId=x['fId']);
-    this.feedback.participantId = localStorage.getItem('user');
-    this.feedback.feedbackDate=formatDate(new Date(),'yyyy-MM-dd', 'en');
-    this.service.addFeedback(this.feedback).subscribe(response=>{
+    this.route.params.subscribe(x => this.feedback.trainingCode = x['tId']);
+    this.route.params.subscribe(x => this.feedback.facultyId = x['fId']);
+    this.feedback.participantId = sessionStorage.getItem('user');
+    this.feedback.feedbackDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+    this.service.addFeedback(this.feedback).subscribe(response => {
       console.log(this.feedback);
       alert("Feedback Succesfully Submitted");
       this.router.navigate(['participant']);
     });
   }
 
-  enrolledTrainingProgram(){
+  enrolledTrainingProgram() {
     this.router.navigate(['list-participant']);
   }
 

@@ -26,7 +26,8 @@
 
         <!-- Enter the code here -->
         <div>
-          <h5>Available Training Programs</h5>
+          <h5>Available Training Programs</h5><br>
+          <label><b>Selected Training Program</b> :{{selectedTrainingProgram}}</label>
           <table class="table table-striped">
             <tr>
               <th>Course Name </th>
@@ -42,13 +43,14 @@
             <td>{{c.startDate}}</td>
             <td>{{c.endDate}}</td>
             
-            <td><button class="btn btn-success" (click)="addTraining(c.trainingCode)">Add Training Program</button></td>
+            <td><button class="btn btn-success" (click)="addTraining(c.trainingCode,c.courseName)">Add Training Program</button></td>
           </tr>
           </table>
         </div>
         
         <div>
-          <h5>Participants</h5>
+          <h5>Participants</h5><br>
+          <label><b>Selected Participant</b> :{{selectedParticipant}}</label>
           <table class="table table-striped">
             <tr>
               <th>Participant Name </th>
@@ -59,14 +61,14 @@
             <tr *ngFor="let e of employeeList">
             <td>{{e.employeeName}}</td>
             <!-- <td>{{e.role}}</td> -->
-            <td><button class="btn btn-success" (click)="addparticipant(e.employeeId)">Add Participant</button></td>
+            <td><button class="btn btn-success" (click)="addparticipant(e.employeeId,e.employeeName)">Add Participant</button></td>
           </tr>
           </table>
         </div>
         
         <form (ngSubmit)="enrollParticipant()" #addtrainingForm=ngForm>
           <div>
-            <button class="btn btn-primary" type="submit" >Enroll Participant</button>
+            <button class="btn btn-primary" type="submit"  >Enroll Participant</button>
           </div>
         </form>
         <!--   -->

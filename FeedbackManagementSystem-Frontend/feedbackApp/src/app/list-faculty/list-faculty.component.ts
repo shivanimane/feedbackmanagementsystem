@@ -37,9 +37,9 @@ export class ListFacultyComponent implements OnInit {
     }
   }
 
-  generateReport(index: number) {
+  generateReport(facultyId: number) {
 
-    this.route.navigate(['list-feedback-faculty', index]);
+    this.route.navigate(['list-feedback-faculty', facultyId]);
   }
 
   redirectToAdmin() {
