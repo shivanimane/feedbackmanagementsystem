@@ -19,6 +19,7 @@ public class LoginController {
 	
 	@Autowired
 	private LoginServiceImpl service;
+	
 	//http://localhost:8035/login/validate
 	@RequestMapping(value = "/validate", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Employee validate(@RequestBody Login login) {

@@ -27,13 +27,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee e) {
-		eDao.deleteById(e.getEmployeeId());
-		Employee employee = eDao.save(e);
-		return employee;
-	}
-
-	@Override
 	public Employee checkRole(int empId) {
 		Employee employee = eDao.findById(empId).get();
 		return employee;

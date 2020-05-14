@@ -32,8 +32,8 @@ public class TrainingProgram {
 	private String courseName;
 
 	@Column(name = "FACULTY_NAME")
-	private String facultyName ;
-	
+	private String facultyName;
+
 	@Column(name = "FACULTY_ID")
 	private Integer facultyId;
 

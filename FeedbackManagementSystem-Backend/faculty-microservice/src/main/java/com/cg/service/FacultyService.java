@@ -12,6 +12,10 @@ import com.cg.beans.Faculty;
 /**
  * @author Shivani
  *
+ *Add Faculty
+ *List All Faculty
+ *Get Faculty by Id
+ *Delete Faculty By Id
  */
 
 

@@ -50,7 +50,6 @@ public class TrainingProgramController {
 	@GetMapping("/coordinator/getTrainingById/{id}")
 	public TrainingProgram getTrainingProgramById(@PathVariable(value = "id") Integer trainingCode) {
 		TrainingProgram trainingProgram = this.trainingProgramMaintainance.getTrainingProgramById(trainingCode);
-
 		return trainingProgram;
 	}
 
