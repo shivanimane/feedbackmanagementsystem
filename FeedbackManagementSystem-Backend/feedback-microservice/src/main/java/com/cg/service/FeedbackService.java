@@ -18,9 +18,11 @@ import com.cg.beans.Feedback;
  * Participant will give feedback 
  * 	for his particular training program
  * 
+ * 
+ * Add Feedback
  * Get All Feedbacks
  * Get Feedback By FacultyId
- * 
+ * Get Feedback By FeedbackId
  */
 public interface FeedbackService {
 	

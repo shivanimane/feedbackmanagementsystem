@@ -67,37 +67,3 @@ public class FeedbackController {
 	}
 	
 }
-
-/**
- * Add Feedback -Json
- * {	
-	"trainingCode":
-	{	
-		"trainingCode":1,
-		"course":{
-			"courseId":1,
-			"courseName":"JAVA",
-			"noOfDays":50
-			},
-		"faculty":{
-			"facultyId":1,
-			"facultyName":"ABC",
-			"skills": [
-        			"Java",
-        			"AWS"
-    ]
-			},
-		"startDate":"2020-02-02",
-		"endDate":"2020-04-04"
-	},
-	"participantId":{"employeeId":1,"employeeName":"Shivani","password":"1234","role":"Participant"},
-	"fbPrsComm":5,
-	"fbClrfyDbts":5,
-	"fbTm":5,
-	"fbHndOut":5,
-	"fbHwSwNtwrk":5,
-	"comments":"what's up",
-	"suggestions":"Pls work this time",
-	"feedbackDate":"2020-02-02"
-}
- */

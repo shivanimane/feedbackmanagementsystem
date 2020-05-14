@@ -22,16 +22,6 @@ public class EmployeeController {
 	
 	@Autowired
 	private EmployeeServiceImpl service;
-	
-	/**
-	 * {
-    		"employeeName": "Shekhar",
-   			"password": "admin",
-    		"role": "Participant"
-		}
-	 * 	
-	 */
-	
 
 	//http://localhost:8034/employee/addemployee
 	@RequestMapping(value = "/addemployee", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
