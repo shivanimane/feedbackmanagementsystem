@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class ListTrainingProgramComponent implements OnInit {
   trainingList: TrainingProgramModel[] = [];
   constructor(private service: TrainingProgramService,
-              private route:Router) { }
+    private route: Router) { }
 
   ngOnInit() {
     setTimeout(() => { this.reloadData() }, 100);
@@ -20,38 +20,40 @@ export class ListTrainingProgramComponent implements OnInit {
     this.service.fetchAlltrainingPrograms().subscribe(data => {
       this.trainingList = data;
       console.log(this.trainingList);
-    })   
+    })
   }
 
 
-  deleteTraining(id:number){
-    this.service.deletetrainingProgram(id)
-    .subscribe(response => {console.log(response);
-    this.reloadData();
-  },
-     error => console.log(error));
+
+  deleteTraining(index: number) {
+    var ans = confirm("Are you sure you want to delete?");
+    if (ans) {
+      this.service.deletetrainingProgram(index).subscribe(response => {
+        this.reloadData();
+      });
+    }
   }
 
-  showFeedback(tId:number){
-    this.route.navigate(['list-feedback-training-program',tId]);
+  showFeedback(tId: number) {
+    this.route.navigate(['list-feedback-training-program', tId]);
   }
 
-  
-  clickOnAddTrainingProgram(){
+
+  clickOnAddTrainingProgram() {
     this.route.navigate(['add-training']);
   }
 
-  clickOfListTrainingProgram(){
+  clickOfListTrainingProgram() {
     this.route.navigate(['list-training']);
   }
 
-  clickOnAddParticipantEnrolled(){
+  clickOnAddParticipantEnrolled() {
     this.route.navigate(['enroll-participant']);
   }
-  clickOfListParticipantEnrolled(){
+  clickOfListParticipantEnrolled() {
     this.route.navigate(['list-participant']);
   }
-  logout(){
+  logout() {
     //localStorage.clear();
     sessionStorage.clear();
     this.route.navigate(['login']);

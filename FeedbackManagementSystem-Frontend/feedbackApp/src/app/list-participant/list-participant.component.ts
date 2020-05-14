@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ParticipantEnrolledModel} from '../models/participantEnrolled.model'
-import {EnrollService} from '../service/enroll.service';
+import { ParticipantEnrolledModel } from '../models/participantEnrolled.model'
+import { EnrollService } from '../service/enroll.service';
 import { TrainingProgramModel } from '../models/trainingprogram.model';
 import { Router } from '@angular/router';
 
@@ -10,43 +10,51 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-participant.component.css']
 })
 export class ListParticipantComponent implements OnInit {
-enrolledList : ParticipantEnrolledModel[]=[];
-//trainingP:TrainingProgramModel;
+  enrolledList: ParticipantEnrolledModel[] = [];
+  //trainingP:TrainingProgramModel;
 
-  constructor(private enrolledService : EnrollService,
-              private route:Router ) { 
+  constructor(private enrolledService: EnrollService,
+    private route: Router) {
     //this.trainingP =new TrainingProgramModel();
   }
 
   ngOnInit() {
     setTimeout(() => { this.reloadData() }, 100);
-    
+
     //console.log(this.enrolledList[0].trainingProgram.trainingCode);
   }
 
   reloadData() {
-    this.enrolledService.fetchAllParticipantEnrolled().subscribe(data =>
-       {this.enrolledList=data ;
+    this.enrolledService.fetchAllParticipantEnrolled().subscribe(data => {
+    this.enrolledList = data;
       console.log(this.enrolledList);
     });
-    
+
   }
-  
-  clickOnAddTrainingProgram(){
+
+  removeParticipant(index: number) {
+    var ans = confirm("Are you sure you want to delete?");
+    if (ans) {
+      this.enrolledService.deleteEnrollParticipant(index).subscribe(response => {
+        this.reloadData();
+      });
+    }
+  }
+  clickOnAddTrainingProgram() {
     this.route.navigate(['add-training']);
   }
 
-  clickOfListTrainingProgram(){
+  clickOfListTrainingProgram() {
     this.route.navigate(['list-training']);
   }
 
-  clickOnAddParticipantEnrolled(){
+  clickOnAddParticipantEnrolled() {
     this.route.navigate(['enroll-participant']);
   }
-  clickOfListParticipantEnrolled(){
+  clickOfListParticipantEnrolled() {
     this.route.navigate(['list-participant']);
   }
-  logout(){
+  logout() {
     //localStorage.clear();
     sessionStorage.clear();
     this.route.navigate(['login']);

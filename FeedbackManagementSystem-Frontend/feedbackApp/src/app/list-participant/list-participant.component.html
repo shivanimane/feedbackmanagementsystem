@@ -33,6 +33,7 @@
             <th>Training Code</th>
             <th>Course Name</th>
             <th>Faculty Name</th>
+            <th>Action</th>
         
         
           </tr>
@@ -43,6 +44,7 @@
             <td>{{c.trainingCode}}</td>
             <td>{{c.courseName}}</td>
             <td>{{c.facultyName}}</td>
+            <td><button class="btn btn-danger" (click)="removeParticipant(c.participantId)">Delete</button></td>
           </tr>
         
         

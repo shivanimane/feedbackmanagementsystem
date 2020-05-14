@@ -11,45 +11,58 @@ import { Router } from '@angular/router';
 })
 export class ListFacultyComponent implements OnInit {
 
-  faculty:FacultyModel[]=[];
+  faculty: FacultyModel[] = [];
 
-  constructor(private facultyService:FacultyService,
-              private feedbackService:FeedbackService,
-              private route: Router) { }
+  constructor(private facultyService: FacultyService,
+    private feedbackService: FeedbackService,
+    private route: Router) { }
 
   ngOnInit() {
+     this.reloadData() 
+  }
+
+  reloadData() {
     this.facultyService.fetchAllFaculties().subscribe(data => {
-      this.faculty =data;
+      this.faculty = data;
       console.log(this.faculty);
     });
   }
 
-  generateReport(index:number){
-    
-      this.route.navigate(['list-feedback-faculty',index]);
+  remove(index: number) {
+    var ans = confirm("Are you sure you want to delete?");
+    if (ans) {
+      this.facultyService.deleteFaculty(index).subscribe(response => {
+        this.reloadData();
+      });
+    }
   }
 
-  redirectToAdmin(){
+  generateReport(index: number) {
+
+    this.route.navigate(['list-feedback-faculty', index]);
+  }
+
+  redirectToAdmin() {
     this.route.navigate(['admin']);
   }
 
-  clickOnAddCourse(){
+  clickOnAddCourse() {
     this.route.navigate(['add-course']);
   }
 
-  clickOnListCourse(){
+  clickOnListCourse() {
     this.route.navigate(['list-course']);
   }
 
-  clickOnAddFaculty(){
+  clickOnAddFaculty() {
     this.route.navigate(['add-faculty']);
   }
 
-  clickOnListFaculty(){
+  clickOnListFaculty() {
     this.route.navigate(['list-faculty']);
   }
 
-  logout(){
+  logout() {
     //localStorage.clear();
     sessionStorage.clear();
     this.route.navigate(['login']);

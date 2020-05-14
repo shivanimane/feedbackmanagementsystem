@@ -39,10 +39,9 @@ public class FacultyServiceImpl implements FacultyService {
 	}
 
 	@Override
-	public String deleteFacultyById(Integer facultyId) {
-		Faculty faculty =  facultyDao.findById(facultyId).get();
-		facultyDao.delete(faculty);
-		return "Faculty with Id "+facultyId+" was deleted";
+	public Boolean deleteFacultyById(Integer facultyId) {
+	 this.facultyDao.deleteById(facultyId);
+		return true ;
 	}
 
 }

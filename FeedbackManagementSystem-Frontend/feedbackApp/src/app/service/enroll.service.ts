@@ -20,6 +20,11 @@ participantEnrolled : ParticipantEnrolledModel[]=[] ;
  fetchAllParticipantEnrolled(){
   return this.http.get<ParticipantEnrolledModel[]>("http://localhost:5056/coordinator/getAllParticipantEnrolled");
 }
+
+// delete the select Enrolled Participant
+deleteEnrollParticipant(index : number){
+  return this.http.delete(" http://localhost:5056/coordinator/deleteParticipantById/"+index);
+}
  
 
 

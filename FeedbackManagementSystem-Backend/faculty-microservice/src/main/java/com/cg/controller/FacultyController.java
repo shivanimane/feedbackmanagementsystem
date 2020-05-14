@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,8 +46,8 @@ public class FacultyController {
 	}
 	
 	//http://localhost:5053/faculty/deleteFaculty/{facultyId}
-	@PostMapping("/deleteFaculty/{facultyId}")
-	public String deleteFacultyById(@PathVariable Integer facultyId) {
+	@DeleteMapping("/deleteFaculty/{facultyId}")
+	public Boolean deleteFacultyById(@PathVariable Integer facultyId) {
 		return facultyService.deleteFacultyById(facultyId);
 	}
 	

@@ -8,7 +8,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.bean.Employee;
 import com.cg.bean.ParticipantEnrolled;
 import com.cg.bean.TrainingProgram;
 import com.cg.dao.ParticipantEnrolledRepository;
@@ -53,18 +52,6 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	}
 
 	@Override
-	public ParticipantEnrolled enrollParticipant(Employee employee, TrainingProgram tp) {
-		ParticipantEnrolled partEnrolled = new ParticipantEnrolled();
-		partEnrolled.setParticipantId(employee.getEmployeeId());
-		partEnrolled.setParticipantName(employee.getEmployeeName());
-		partEnrolled.setTrainingCode(tp.getTrainingCode());
-		partEnrolled.setCourseName(tp.getCourseName());
-		partEnrolled.setFacultyName(tp.getFacultyName());
-		return participantEnrolledDao.save(partEnrolled);
-
-	}
-
-	@Override
 	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
 		Integer trainingCode = 0;
 		List<ParticipantEnrolled> enrollmentList = participantEnrolledDao.findAll();
@@ -76,17 +63,6 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 		}
 		return this.trainingProgramDao.findById(trainingCode).get();
 
-	}
-
-	@Override
-	public List<ParticipantEnrolled> getAllParticipantEnrolled() {
-		return this.participantEnrolledDao.findAll();
-	}
-
-	@Override
-	public void deleteAllEnrolledParticipant(Integer trainingCode) {
-		this.participantEnrolledDao.deleteBytrainingCode(trainingCode);
-		
 	}
 
 }
