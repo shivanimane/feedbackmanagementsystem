@@ -21,7 +21,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { ParticipantComponent } from './participant/participant.component';
 import { ListFeedbackTrainingProgramComponent } from './list-feedback-training-program/list-feedback-training-program.component';
 import { ListParticipantComponent } from './list-participant/list-participant.component';
-import { AddParticipantComponent } from './add-participant/add-participant.component';
+import { AddParticipantComponent } from './enroll-participant/enroll-participant.component';
 import { ErrorComponent } from './error/error.component';
 import { GlobalErrorService } from './service/global-error.service';
 
@@ -41,13 +41,13 @@ const routes : Routes = [
   {path:'list-training',component:ListTrainingProgramComponent},
   {path:'list-participant', component:ListParticipantComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
-  {path:'add-participant' , component:AddParticipantComponent},
+  {path:'enroll-participant' , component:AddParticipantComponent},
   {path:'participant', component:ParticipantComponent},
   {path:'error/:errMsg', component:ErrorComponent},
   {path:'list-feedback-faculty/:id', component: ListFeedbackFacultyComponent},
   {path:'list-feedback-training-program/:tId', component: ListFeedbackTrainingProgramComponent},
-  {path:'', redirectTo:'home', pathMatch:"full"},
-  {path:'*', redirectTo:'home', pathMatch:"full"},
+  {path:'', redirectTo:'login', pathMatch:"full"},
+  {path:'*', redirectTo:'login', pathMatch:"full"},
   //{path:'admin/add-course', component: AddCourseComponent}
 ];
 

@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 /**
  * @author Uma Shankar
  *
@@ -15,12 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PARTICIPANT_ENROLLED")
-public class ParticipantEnrolled implements java.io.Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5683547266894696823L;
+public class ParticipantEnrolled{
 
 	@Id
 	@Column(name = "PARTICIPANT_ID")
@@ -29,15 +22,14 @@ public class ParticipantEnrolled implements java.io.Serializable {
 	@Column(name = "PARTICIPANT_NAME")
 	private String participantName;
 
-	
 	@Column(name = "TRAINING_CODE")
 	private Integer trainingCode;
-	
-	@Column(name ="COURSE_NAME")
-	private String courseName ;
-	
-	@Column(name ="FACULTY_NAME")
-	private String facultyName ;
+
+	@Column(name = "COURSE_NAME")
+	private String courseName;
+
+	@Column(name = "FACULTY_NAME")
+	private String facultyName;
 
 	public Integer getParticipantId() {
 		return participantId;
@@ -78,6 +70,5 @@ public class ParticipantEnrolled implements java.io.Serializable {
 	public void setFacultyName(String facultyName) {
 		this.facultyName = facultyName;
 	}
-		
 
 }

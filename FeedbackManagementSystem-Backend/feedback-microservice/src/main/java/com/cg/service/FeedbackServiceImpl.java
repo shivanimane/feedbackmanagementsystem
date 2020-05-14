@@ -36,8 +36,6 @@ public class FeedbackServiceImpl implements FeedbackService{
 		return this.feedbackDao.findAll();
 	}
 
-	//Needs to be corrected
-	
 	@Override
 	public List<Feedback> getFeedbackByFacultyId(Integer facultyId) {
 		return this.feedbackDao.findAll().stream().filter(f->f.getFacultyId()==facultyId).collect(Collectors.toList());

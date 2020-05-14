@@ -8,9 +8,9 @@ import {Router} from '@angular/router';
 import {ParticipantEnrolledModel} from '../models/participantEnrolled.model'
 
 @Component({
-  selector: 'app-add-participant',
-  templateUrl: './add-participant.component.html',
-  styleUrls: ['./add-participant.component.css']
+  selector: 'app-enroll-participant',
+  templateUrl: './enroll-participant.component.html',
+  styleUrls: ['./enroll-participant.component.css']
 })
 export class AddParticipantComponent implements OnInit {
 trainingList: TrainingProgramModel[] = [] ;
@@ -72,7 +72,7 @@ participantEnrolled : ParticipantEnrolledModel ;
   }
 
   clickOnAddParticipantEnrolled(){
-    this.route.navigate(['add-participant']);
+    this.route.navigate(['enroll-participant']);
   }
   clickOfListParticipantEnrolled(){
     this.route.navigate(['list-participant']);

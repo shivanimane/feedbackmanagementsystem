@@ -75,7 +75,7 @@ export class AddTrainingprogramComponent implements OnInit {
   }
 
   clickOnAddParticipantEnrolled(){
-    this.route.navigate(['add-participant']);
+    this.route.navigate(['enroll-participant']);
   }
   clickOfListParticipantEnrolled(){
     this.route.navigate(['list-participant']);

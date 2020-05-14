@@ -53,16 +53,6 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 	}
 
 	@Override
-	public TrainingProgram isTrainingProgram(Integer trainingCode) {
-		List<TrainingProgram> trainingProgramList = this.trainingProgramDao.findAll();
-		for (int i = 0; i <= trainingProgramList.size(); i++) {
-			if (trainingProgramList.get(i).getTrainingCode() == trainingCode)
-				return trainingProgramList.get(i);
-		}
-		return null;
-	}
-
-	@Override
 	public ParticipantEnrolled enrollParticipant(Employee employee, TrainingProgram tp) {
 		ParticipantEnrolled partEnrolled = new ParticipantEnrolled();
 		partEnrolled.setParticipantId(employee.getEmployeeId());
@@ -74,7 +64,6 @@ public class TrainingProgramMaintainanceImpl implements TrainingProgramMaintaina
 
 	}
 
-	// CHANGES NEEDED HERE ---- DONE AK BAAR CHECK KAR LO
 	@Override
 	public TrainingProgram getTrainingProgramByParticipantId(Integer participantId) {
 		Integer trainingCode = 0;
