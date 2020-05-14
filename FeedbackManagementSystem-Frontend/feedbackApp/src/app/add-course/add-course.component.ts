@@ -44,7 +44,9 @@ export class AddCourseComponent implements OnInit {
   clickOnListFaculty(){
     this.route.navigate(['list-faculty']);
   }
-
+  clickOnRegister(){
+    this.route.navigate(['register']);
+  }
   logout(){
     //localStorage.clear();
     sessionStorage.clear();

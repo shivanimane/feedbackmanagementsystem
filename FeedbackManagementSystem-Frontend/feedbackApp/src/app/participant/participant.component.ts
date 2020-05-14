@@ -40,7 +40,9 @@ export class ParticipantComponent implements OnInit {
   }
 
   logout(){
+    //localStorage.clear();
     sessionStorage.clear();
     this.route.navigate(['login']);
   }
+
 }

@@ -49,4 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 	}
 
+	@Override
+	public List<Employee> getallEmployee() {
+		return this.eDao.findAll();
+	}
+
 }
