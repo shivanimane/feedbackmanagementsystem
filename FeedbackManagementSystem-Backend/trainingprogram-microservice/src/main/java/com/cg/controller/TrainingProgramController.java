@@ -3,9 +3,7 @@
  */
 package com.cg.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,6 +19,7 @@ import com.cg.bean.Course;
 import com.cg.bean.Faculty;
 import com.cg.bean.TrainingProgram;
 import com.cg.bean.TrainingProgramDate;
+import com.cg.service.ParticipantEnrollMaintainance;
 import com.cg.service.TrainingProgramMaintainance;
 
 /**
@@ -37,6 +36,9 @@ public class TrainingProgramController {
 
 	@Autowired
 	TrainingProgramMaintainance trainingProgramMaintainance;
+	
+	@Autowired
+	ParticipantEnrollMaintainance participantEnrollService ;
 
 	// http://localhost:5056/coordinator/getAllTrainingProgramList
 	@GetMapping("/coordinator/getAllTrainingProgramList")
@@ -78,7 +80,7 @@ public class TrainingProgramController {
 	// http://localhost:5056/coordinator/deleteTrainingProgram/{id}
 	@DeleteMapping("/coordinator/deleteTrainingProgram/{id}")
 	public Boolean deleteTrainingProgram(@PathVariable(value = "id") Integer trainingCode) {
-		this.trainingProgramMaintainance.deleteAllEnrolledParticipant(trainingCode);
+		this.participantEnrollService.deleteAllEnrolledParticipant(trainingCode);
 		return this.trainingProgramMaintainance.deleteTrainingProgram(trainingCode);
 	}
 

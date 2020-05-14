@@ -36,14 +36,14 @@
                       <th>Faculty Name </th>
                       <th>Skills</th>
                       <th>Generate Report</th>
-                      
+                      <th>Action</th>
                     </tr>
-                    <tr *ngFor="let f of faculty; let i =index">
+                    <tr *ngFor="let f of faculty">
                     <td>{{f.facultyId}}</td>
                     <td>{{f.facultyName}}</td>
                     <td>{{f.skills}}</td>
                     <td><button class="btn btn-primary" (click)="generateReport(f.facultyId)">Generate Report</button></td>
-                    <!-- <td><button class="btn btn-warning" (click)="remove(i)">Delete</button></td> -->
+                    <td><button class="btn btn-warning" (click)="remove(f.facultyId)">Delete</button></td>
                   </tr>
                   </table>
                   

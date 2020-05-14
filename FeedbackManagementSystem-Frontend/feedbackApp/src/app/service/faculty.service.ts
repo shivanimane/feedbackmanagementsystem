@@ -7,30 +7,22 @@ import { SkillsModel } from '../models/skills.model';
   providedIn: 'root'
 })
 export class FacultyService {
-  faculties : FacultyModel[] = [];
-  //skillsList :String[]=[];
+  faculties: FacultyModel[] = [];
 
-  constructor(private http: HttpClient) { 
-    // this.http.get<String[]>("../assets/skills.json").subscribe(data=>{
-    //   this.skillsList =data;
-    // });
+
+  constructor(private http: HttpClient) { }
+
+  //Add Faculty
+  addFaculty(faculty: FacultyModel) {
+    console.log(faculty);
+    return this.http.post<FacultyModel[]>("http://localhost:5053/faculty/addFaculty", faculty);
   }
 
-  // fetchSkillList():String[]{
-  //   return this.skillsList;
-  // }
-
-   //Add Faculty
-   addFaculty(faculty : FacultyModel){
-     console.log(faculty);
-    return this.http.post<FacultyModel[]>("http://localhost:5053/faculty/addFaculty",faculty);
-  }
-
-  fetchAllFaculties(){
+  fetchAllFaculties() {
     return this.http.get<FacultyModel[]>("http://localhost:5053/faculty/getAllFaculty");
   }
 
-  deleteFaculty(index : number){
-    return this.faculties.splice(index,1);
+  deleteFaculty(index: number) {
+    return this.http.delete("http://localhost:5053/faculty/deleteFaculty/" + index);
   }
 }

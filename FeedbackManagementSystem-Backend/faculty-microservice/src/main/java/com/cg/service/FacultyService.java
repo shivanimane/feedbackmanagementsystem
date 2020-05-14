@@ -24,7 +24,7 @@ public interface FacultyService {
 	Faculty addFaculty(Faculty faculty);
 	List<Faculty> getAllFaculty();
 	Faculty getFacultyById(Integer facultyId);
-	String deleteFacultyById(Integer facultyId);
+	Boolean deleteFacultyById(Integer facultyId);
 	//update
 	
 }
