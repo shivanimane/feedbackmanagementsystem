@@ -36,8 +36,21 @@ public class EmployeeController {
 	//http://localhost:8034/employee/addemployee
 	@RequestMapping(value = "/addemployee", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Employee addEmployee(@RequestBody Employee e) {
+		List<Employee> allList = this.service.getallEmployee();
+		for (int i = 0; i < allList.size(); i++) {
+			if(allList.get(i).getEmployeeName().equalsIgnoreCase(e.getEmployeeName())) {
+				return null;
+			}
+		}
 		Employee employee = service.addEmployee(e);
 		return employee;
+	}
+	
+	
+	//http://localhost:8034/employee/getAllEmployees
+	@GetMapping("/getAllEmployees")
+	public List<Employee> getAllEmployee(){
+		return this.service.getallEmployee();
 	}
 	
 	//http://localhost:8034/employee/employeebyid/{empId}
